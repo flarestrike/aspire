@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRouting } from './app.routing';
 import { AppTag } from './app.tag';
 
 @NgModule({
@@ -8,6 +9,7 @@ import { AppTag } from './app.tag';
     AppTag
   ],
   imports: [
+    AppRouting,
     BrowserModule
   ],
   providers: [],
