@@ -1,0 +1,26 @@
+\:host
+  position: relative
+  display: inline-block
+  width: 100%
+  .nav
+    position: absolute
+    top: 0
+    display: block
+    opacity: 1
+    padding: 10px
+    transition: opacity .5s ease, top .5s ease
+    &.x
+      top: -200px
+      opacity: 0
+      animation: dismiss .5s ease alternate
+    a
+      display: inline-block
+      padding: 20px
+
+@keyframes dismiss
+  0%
+    top: 0
+    opacity: 1
+  100%
+    top: -200px
+    opacity: 0

@@ -1,26 +1,25 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { filter } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { Enrouted } from 'src/utils';
+import { Profile } from '../profile';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.tag.html',
-  styleUrls: ['./home.tag.sass']
+  styleUrls: ['./home.tag.sass'],
+  providers: [Enrouted]
 })
 export class HomeTag {
+  private k;
   constructor(
     private ar: ActivatedRoute,
-    private r: Router,
-    private t: Title) {
-    r.events.pipe(
-      filter(e => e instanceof NavigationEnd),
-      filter((e: NavigationEnd) => e.url !== '/'))
-    .subscribe(e => {
-      t.setTitle('cool');
-    });
+    private en: Enrouted) {
     ar.data.subscribe(d => {
-      console.log('profile', d.profile);
+      const { name } = d.profile;
+      if (this.k) {
+        this.k.unsubscribe();
+      }
+      this.k = en.title(/\/.+/, name).subscribe(_ => {});
     });
   }
 }

@@ -1,4 +1,5 @@
-<a routerLink='/'> App </a>
-<a routerLink='/mock'> Lander </a>
-<a routerLink='/mock/cards'> Cards </a>
-<router-outlet></router-outlet>
+<div class='nav' [class.x]='route.children.length > 0'>
+  <a routerLink='/mock'> Lander </a>
+  <a routerLink='/mock/cards'> Cards </a>
+</div>
+<router-outlet> </router-outlet>
