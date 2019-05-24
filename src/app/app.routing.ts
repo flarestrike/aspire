@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
+import { ProfileResolver } from './profile.resolver';
 import { HomeTag } from './home/home.tag';
 
 const routes: Routes = [{
-  path: '',
-  component: HomeTag
-}, {
+//   path: '',
+//   component: HomeTag
+// }, {
   path: ':id',
+  resolve: {
+    profile: ProfileResolver
+  },
   component: HomeTag,
   children: [{
     path: '',
@@ -19,7 +24,9 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    HttpClientModule,
+    RouterModule.forRoot(routes)],
   declarations: [HomeTag],
   exports: [RouterModule]
 })
