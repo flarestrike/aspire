@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Profile } from './profile';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { Profile } from 'src/model';
 import { environment as env } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })

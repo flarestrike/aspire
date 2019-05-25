@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { CoverTag } from './cover/cover.tag';
 import { HomeTag } from './home.tag';
 
 const routes: Routes = [{
@@ -9,8 +11,12 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  declarations: [HomeTag],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes)],
+  declarations: [
+    CoverTag,
+    HomeTag],
   exports: [RouterModule]
 })
 export class LanderMod {}

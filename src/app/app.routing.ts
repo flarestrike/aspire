@@ -20,6 +20,9 @@ const routes: Routes = [{
   }, {
     path: 'cards',
     loadChildren: 'src/cards#CardsMod'
+  }, {
+    path: 'sheet',
+    loadChildren: 'src/sheet#SheetMod'
   }]
 }];
 

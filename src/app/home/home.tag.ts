@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Enrouted } from 'src/utils';
-import { Profile } from '../profile';
+import { Profile } from 'src/model';
 
 @Component({
   selector: 'app-home',

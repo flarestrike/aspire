@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ld-home',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.tag.sass']
 })
 export class HomeTag {
+  constructor(
+    private ar: ActivatedRoute) {
+    ar.url.subscribe(e => {
+      console.log('sheet', ar.snapshot.data);
+    });
+  }
 }
