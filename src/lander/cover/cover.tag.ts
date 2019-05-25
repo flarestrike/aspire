@@ -1,4 +1,5 @@
 import { Input, Component } from '@angular/core';
+import { Cover } from 'src/lander/model';
 
 @Component({
   selector: 'ld-cover',
