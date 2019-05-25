@@ -10,15 +10,15 @@
     flex: 0 0 60%
     box-sizing: border-box
     display: flex
-    flex-flow: column
     justify-content: center
     align-items: center
-    border-bottom: 9px solid #d08803
+    flex-flow: column
+    border-bottom: var(--cover-split)
     background: var(--c-ok)
     color: var(--c-bg)
-    text-shadow: 2px 2px 2px #333
     font-size: 90px
     text-align: center
+    text-shadow: var(--cover-hero-shadow)
     .sub
       font-size: 50px
   .info
@@ -32,24 +32,24 @@
     > .item
       display: block
   .more
-    font-size: 20px
     color: var(--c-bk)
+    font-size: 20px
     > .item
       display: inline-block
-      background: #7a7
+      // background: #7a7
       padding: 20px
       width: 40px
       height: 40px
   .qrc
-    margin: 10px
-    background: #a8d
-    width: 10vw
-    height: 10vw
     right: 10%
     bottom: 10%
+    margin: 10px
+    // background: #a8d
+    width: 10vw
+    height: 10vw
   .gap
     margin: auto 4%
-    border-right: 6px solid #d08803
+    border-right: var(--cover-hsplit)
     height: 20vh
   .item
     margin: 10px

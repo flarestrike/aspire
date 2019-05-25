@@ -1,3 +1,1 @@
-cards HOME
-{{ profile | json }}
-<router-outlet></router-outlet>
+<cs-card *ngFor='let c of list' [data]='c'></cs-card>

@@ -3,8 +3,8 @@
   "rules": {
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
     "directive-class-suffix": [true, "Attr"],
-    "component-class-suffix": [true, "Tag"],
-    "directive-selector": [true, "attribute", "cs", "camelCase"],
-    "component-selector": [true, "element", "cs", "kebab-case"]
+    "component-class-suffix": [true, "Tag", "Card"],
+    "directive-selector": [true, "attribute", ["cs", "csc"], "camelCase"],
+    "component-selector": [true, "element", ["cs", "csc"], "kebab-case"]
   }
 }
