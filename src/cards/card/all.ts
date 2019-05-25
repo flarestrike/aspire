@@ -1,14 +1,14 @@
 import { InfoCard } from './info/info.card';
 import { StackCard } from './stack/stack.card';
-import { ExpCard } from './exp/exp.card';
+import { RoleCard } from './role/role.card';
 import { EduCard } from './edu/edu.card';
 
 export const cards = [
-  EduCard, ExpCard,
+  EduCard, RoleCard,
   InfoCard, StackCard];
 export const cardsMap = {
   edu: EduCard,
-  exp: ExpCard,
+  role: RoleCard,
   info: InfoCard,
   stack: StackCard,
 };

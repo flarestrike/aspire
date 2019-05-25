@@ -1,4 +1,4 @@
-import { InfoCard, StackCard, ExpCard, EduCard } from 'src/model';
+import { InfoCard, StackCard, RoleCard, EduCard } from 'src/model';
 import { Profile } from 'src/model';
 
 export class CardPlucker {
@@ -6,16 +6,8 @@ export class CardPlucker {
     return [
       new InfoCard(p.info),
       ...p.stackList.map(n => new StackCard(n)),
-      // new Card({ type: 'stack', text: 'frontend' }),
-      // new Card({ type: 'stack', text: 'backend' }),
-      // new Card({ type: 'stack', text: 'design' }),
-      // new Card({ type: 'stack', text: 'project management' }),
-      // new ExpCard({ time: 'Apr', text: 'somethere' }),
-      // new ExpCard({ time: 'Jun', text: 'sjaifd ' }),
-      // new ExpCard({ time: 'Jan', text: 'asjdif ' }),
-      // new ExpCard({ time: 'Apr', text: 'adjif jsidf ' }),
-      // new EduCard({ time: 'May', text: 'asdfj aji' }),
-      // new EduCard({ time: 'Sep', text: 'asdfj aji' }),
+      ...p.roleList.map(n => new RoleCard(n)),
+      ...p.eduList.map(n => new EduCard(n)),
     ];
   }
 }

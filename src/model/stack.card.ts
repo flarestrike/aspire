@@ -1,9 +1,5 @@
 import { Card } from './card';
-class Item {
-  color = '';
-  icon = '';
-  text = '';
-}
+import { Item } from './item';
 
 export class StackCard extends Card {
   text = '';

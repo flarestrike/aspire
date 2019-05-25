@@ -1,0 +1,5 @@
+<h2> {{ text }} </h2>
+<div> {{ location | json }} </div>
+<div> {{ duration | json }} </div>
+<div> {{ projects | json }} </div>
+<div *ngFor='let d of duties'> {{ d.text }} </div>
