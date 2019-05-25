@@ -5,14 +5,14 @@ import { cardsMap as cards } from './all';
 @Component({
   selector: 'cs-card',
   templateUrl: './card.tag.html',
-  styleUrls: ['./card.tag.sass'],
+  styleUrls: ['./card.tag.sass', './base.theme.sass'],
 })
 export class CardTag implements OnInit {
   @Input() set data(v) {
     this.type = v.type;
     this.ctx = v;
   }
-  type = '';
+  @HostBinding('attr.type') type = '';
   ctx: any;
   @ViewChild('box', { read: ViewContainerRef }) box: ViewContainerRef;
   constructor(

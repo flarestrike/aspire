@@ -1,6 +1,16 @@
 \:host
   display: inline-block
-  margin: 20px
-  background: #9a9
-  padding: 20px
+  grid-column: span 4
   color: var(--c-bk)
+
+\:host[type=info]
+  grid-column: span 12
+
+\:host[type=stack]
+  grid-column: span 6
+
+\:host[type=exp]
+  grid-column: span 12
+
+\:host[type=edu]
+  grid-column: span 12

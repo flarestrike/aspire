@@ -61,6 +61,8 @@ rules:
         - flex-flow
         - flex-wrap
         - grid
+        - grid-template-columns
+        - grid-column
 
         - visibility
         - opacity
@@ -77,6 +79,7 @@ rules:
 
         - cursor
         - border
+        - border-top
         - border-right
         - border-bottom
         - border-radius
