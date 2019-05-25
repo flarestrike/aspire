@@ -1,10 +1,11 @@
-import { InfoCard, ExpCard, EduCard } from 'src/model';
+import { InfoCard, StackCard, ExpCard, EduCard } from 'src/model';
 import { Profile } from 'src/model';
 
 export class CardPlucker {
   pluck(p: Profile) {
     return [
       new InfoCard(p.info),
+      ...p.stackList.map(n => new StackCard(n)),
       // new Card({ type: 'stack', text: 'frontend' }),
       // new Card({ type: 'stack', text: 'backend' }),
       // new Card({ type: 'stack', text: 'design' }),
