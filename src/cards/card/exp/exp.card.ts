@@ -1,5 +1,5 @@
 import { Input, Component } from '@angular/core';
-import { ExpCard as Model } from 'src/cards/model';
+import { ExpCard as Model } from 'src/model';
 
 @Component({
   selector: 'csc-exp',

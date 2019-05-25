@@ -1,5 +1,5 @@
 import { Input, Component } from '@angular/core';
-import { EduCard as Model } from 'src/cards/model';
+import { EduCard as Model } from 'src/model';
 
 @Component({
   selector: 'csc-edu',
