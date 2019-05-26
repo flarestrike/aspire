@@ -8,6 +8,7 @@ export class Link {
 }
 
 export class InfoCard extends Card {
+  lastRole = '';
   name = '';
   email = '';
   location = '';

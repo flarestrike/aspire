@@ -1,5 +1,6 @@
 export class LabelDef {
   info = 'Info';
+  title = 'Title';
   name = 'Name';
   email = 'Email';
   era = 'Era';

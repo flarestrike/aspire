@@ -1,5 +1,12 @@
 \:host
-  display: grid
-  grid-template-columns: repeat(12, 1fr)
+  display: inline-flex
+  justify-content: center
   background: var(--c-bg-b)
-  padding: 2% 4%
+  width: 100%
+  .wrap
+    box-sizing: border-box
+    display: inline-grid
+    grid-template-columns: repeat(12, 1fr)
+    margin: auto
+    padding: 2% 4%
+    max-width: 1280px
