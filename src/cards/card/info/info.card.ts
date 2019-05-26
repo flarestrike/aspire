@@ -12,7 +12,7 @@ export class InfoCard extends Model {
     Object.assign(this, v);
   }
   get lb() {
-    return this._lb || {};
+    return this._lb;
   }
   constructor(private _lb: Label) {
     super({ type: 'info' });
