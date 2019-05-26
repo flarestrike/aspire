@@ -1,3 +1,4 @@
+import { ProfileConfig } from './profile.config';
 import { InfoCard } from './info.card';
 import { StackCard } from './stack.card';
 import { RoleCard } from './role.card';
@@ -14,6 +15,7 @@ class EduCardMap {
 }
 
 export class Profile {
+  config = new ProfileConfig();
   name = '';
   info: InfoCard;
   stacks: StackCardMap;

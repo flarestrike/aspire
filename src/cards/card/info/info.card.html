@@ -1,16 +1,16 @@
 <div class='summary'>
-  <h2> {{ name }} </h2>
-  <div>
+  <cs-title key='spot' [text]='name'></cs-title>
+  <cs-item key='badge'>
     {{ lb.title }}: {{ title }}
-  </div>
-  <div>
+  </cs-item>
+  <cs-item key='envelope'>
     {{ lb.email }}: {{ email }}
-  </div>
-  <div>
+  </cs-item>
+  <cs-item key='pin'>
     {{ lb.location }}: {{ location }}
-  </div>
-  <div>
+  </cs-item>
+  <cs-item key='body'>
     {{ lb.era }}: {{ era }}
-  </div>
+  </cs-item>
 </div>
 <div class='avatar'></div>

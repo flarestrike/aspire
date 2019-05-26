@@ -1,2 +1,3 @@
-<h2> {{ text }} Stack </h2>
-<div *ngFor='let i of items'> {{ i.text }} </div>
+<cs-title key='items' [text]='text'></cs-title>
+<cs-item *ngFor='let i of items'
+  [key]='i.icon || "rect"' [text]='i.text'></cs-item>

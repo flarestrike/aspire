@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   appAsset: '/assets',
-  dataHost: 'http://localhost:7654/aspire',
+  dataHost: 'http://localhost:7654',
 };
 
 /*
