@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Enrouted } from 'src/utils';
+import { AppState } from './app.state';
 
 const appTitle = 'Aspire - all the way about you';
 @Component({
@@ -14,8 +15,14 @@ export class AppTag {
     return this.ar;
   }
   constructor(
+    private st: AppState,
     private ar: ActivatedRoute,
     private er: Enrouted) {
     er.title(/\//, appTitle).subscribe(_ => {});
+    ar.queryParams.subscribe(q => {
+      if (q.hl) {
+        st.update('lang', q.hl, 'en');
+      }
+    });
   }
 }

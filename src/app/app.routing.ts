@@ -5,6 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileResolver } from './profile.resolver';
 import { HomeTag } from './home/home.tag';
 
+import { DataSrc } from './data.src';
+import { LabelSrc as CardLabelSrc } from 'src/cards/label';
+
 const routes: Routes = [{
 //   path: '',
 //   component: HomeTag
@@ -30,6 +33,9 @@ const routes: Routes = [{
   imports: [
     HttpClientModule,
     RouterModule.forRoot(routes)],
+  providers: [{
+    provide: CardLabelSrc, useClass: DataSrc
+  }],
   declarations: [HomeTag],
   exports: [RouterModule]
 })
