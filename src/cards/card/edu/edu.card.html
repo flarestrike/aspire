@@ -1,4 +1,19 @@
 <cs-title key='hat' [text]='text'></cs-title>
-<h3> {{ dept }} </h3>
-<div> {{ subject }} </div>
-<div *ngFor='let r of relates'> {{ r.text }} </div>
+
+<h3>
+  <cti key='library'></cti>
+  {{ dept }}
+</h3>
+
+<div class='tags'>
+  <cs-period [amid]='duration'></cs-period>
+  <div class='place'>
+    <cti key='pin'></cti>
+    <cs-place [at]='location'></cs-place>
+  </div>
+</div>
+
+<div class='subject'>
+  {{ subject }}
+  <cs-item *ngFor='let r of relates' [data]='r'></cs-item>
+</div>

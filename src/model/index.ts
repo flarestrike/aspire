@@ -1,6 +1,7 @@
 export * from './profile';
 export * from './item';
 export * from './place';
+export * from './period';
 
 export * from './card';
 export * from './info.card';

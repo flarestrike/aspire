@@ -9,8 +9,10 @@ import { CardTag } from './card.tag';
 import { CsTitleTag } from './title/title.tag';
 import { CsItemTag } from './item/item.tag';
 import { CsPlaceTag } from './place/place.tag';
+import { CsPeriodTag } from './period/period.tag';
 
 const utils = [
+  CsPeriodTag,
   CsPlaceTag,
   CsItemTag,
   CsTitleTag];
