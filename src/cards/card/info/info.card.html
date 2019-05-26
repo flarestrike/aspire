@@ -1,15 +1,15 @@
 <div class='summary'>
   <cs-title key='spot' [text]='name'></cs-title>
-  <cs-item key='badge'>
+  <cs-item icon='badge'>
     {{ lb.title }}: {{ title }}
   </cs-item>
-  <cs-item key='envelope'>
+  <cs-item icon='envelope'>
     {{ lb.email }}: {{ email }}
   </cs-item>
-  <cs-item key='pin'>
-    {{ lb.location }}: {{ location }}
+  <cs-item icon='pin'>
+    {{ lb.location }}: <cs-place [at]='location'></cs-place>
   </cs-item>
-  <cs-item key='body'>
+  <cs-item icon='body'>
     {{ lb.era }}: {{ era }}
   </cs-item>
 </div>

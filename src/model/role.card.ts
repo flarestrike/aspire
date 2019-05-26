@@ -7,13 +7,16 @@ class Project {
   summary = '';
 }
 export class RoleCard extends Card {
+  logo = '';
   text = '';
   location: Location;
+  locations: Location[];
   duration = {};
   duties: Item[];
   projects: Project[];
   constructor(o?) {
     super({ type: 'role' });
     Object.assign(this, o);
+    this.locations = this.locations || [this.location];
   }
 }

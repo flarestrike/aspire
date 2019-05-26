@@ -1,5 +1,9 @@
-<h2> {{ text }} </h2>
-<div> {{ location | json }} </div>
-<div> {{ duration | json }} </div>
+<cs-title [key]='logo || "badge"' [text]='text'></cs-title>
+<div class='places'>
+  <cti key='here'></cti>
+  <cs-place *ngFor='let p of locations' [at]='p'></cs-place>
+</div>
+<!-- <cs-period [data]='duration'></cs-period> -->
+<div class='period'> {{ duration | json }} </div>
 <div> {{ projects | json }} </div>
 <div *ngFor='let d of duties'> {{ d.text }} </div>
