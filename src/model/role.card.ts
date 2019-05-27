@@ -12,8 +12,18 @@ export class RoleCard extends Card {
   location: Location;
   locations: Location[];
   duration = {};
-  duties: Item[];
+  // duties: Item[];
   projects: Project[];
+  set duties(vs) {
+    this._duties = vs.map(v => {
+      const { icon, ...rst } = v;
+      return new Item({ icon: icon || 'f_circle', ...rst });
+    });
+  }
+  get duties() {
+    return this._duties;
+  }
+  _duties: Item[] = [];
   constructor(o?) {
     super({ type: 'role' });
     Object.assign(this, o);

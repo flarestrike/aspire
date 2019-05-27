@@ -4,7 +4,7 @@ import { Place as Model } from 'src/model';
 
 @Component({
   selector: 'cs-place',
-  template: '{{ text }}',
+  template: `<cti key='pin'></cti> {{ text }}`,
   styleUrls: ['./place.tag.sass']
 })
 export class CsPlaceTag extends Model {
