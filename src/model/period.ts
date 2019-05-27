@@ -23,6 +23,6 @@ export class Period {
     const { months, date: { short: fmt }, periods } = this._lb;
     const opts = { months, fmt };
     this.text = `${Dnt.my(this.ds, opts)} - ${Dnt.my(this.du, opts)}`;
-    this.rangeText = Dnt.period(this.ds, this.du, periods)
+    this.rangeText = Dnt.period(this.ds, this.du, periods);
   }
 }
