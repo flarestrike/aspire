@@ -9,7 +9,16 @@ export class EduCard extends Card {
   text = '';
   dept = '';
   subject = '';
-  relates: Item[] = [];
+  set relates(vs) {
+    this._relates = vs.map(v => {
+      const { icon, ...rst } = v;
+      return new Item({ icon: icon || 'rect', ...rst });
+    });
+  }
+  get relates() {
+    return this._relates;
+  }
+  _relates: Item[] = [];
   constructor(o?) {
     super({ type: 'edu' });
     Object.assign(this, o);
