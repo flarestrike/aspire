@@ -17,10 +17,10 @@ export class Period {
   rangeText = '';
   private _since = '';
   private _until = '';
-  constructor(private _lb) {}
+  constructor(private _lb?) {}
   updateText() {
     if (!this.ds || !this.du) { return; }
-    const { months, date: { short: fmt }, periods } = this._lb;
+    const { months, date: { short: fmt }, periods } = this._lb || { date: {}, periods: {} } as any;
     const opts = { months, fmt };
     this.text = `${Dnt.my(this.ds, opts)} - ${Dnt.my(this.du, opts)}`;
     this.rangeText = Dnt.period(this.ds, this.du, periods);
