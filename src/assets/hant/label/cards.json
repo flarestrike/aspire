@@ -1,4 +1,13 @@
 {
+  "months": [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "date": {
+    "short": "#y年#m月"
+  },
+  "periods": {
+    "m": "#mos個月",
+    "y": "#yrs年",
+    "ym": "#yrs年#mos個月"
+  },
   "title": "職業",
   "email": "電子郵件地址",
   "location": "地點",

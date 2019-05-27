@@ -17,12 +17,12 @@ export class Period {
   rangeText = '';
   private _since = '';
   private _until = '';
+  constructor(private _lb) {}
   updateText() {
     if (!this.ds || !this.du) { return; }
-    this.text = `${Dnt.my(this.ds)} - ${Dnt.my(this.du)}`;
-    const dys = (this.du.getTime() - this.ds.getTime()) / 86400_000;
-    const yrs = Math.floor(dys / 365) + ' yrs';
-    const mos = Math.round((dys % 365) / 30) + ' mos';
-    this.rangeText = `${yrs}, ${mos}`;
+    const { months, date: { short: fmt }, periods } = this._lb;
+    const opts = { months, fmt };
+    this.text = `${Dnt.my(this.ds, opts)} - ${Dnt.my(this.du, opts)}`;
+    this.rangeText = Dnt.period(this.ds, this.du, periods)
   }
 }

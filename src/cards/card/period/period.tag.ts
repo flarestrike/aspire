@@ -1,4 +1,5 @@
 import { Input, Component } from '@angular/core';
+import { Label } from 'src/cards/label';
 
 import { Period as Model } from 'src/model';
 
@@ -13,7 +14,12 @@ export class CsPeriodTag extends Model {
   @Input() set amid(v) {
     Object.assign(this, v);
   }
-  constructor() {
-    super();
+  constructor(_lb: Label) {
+    super(_lb);
+    _lb.event.subscribe(e => {
+      if (e.action === 'update') {
+        this.updateText();
+      }
+    });
   }
 }
