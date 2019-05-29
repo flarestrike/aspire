@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CtIconMod as IconMod } from '@chakray/tags';
+import { CtLzmgMod, CtIconMod as IconMod } from '@chakray/tags';
 
 import { cards } from './all';
 import { CardTag } from './card.tag';
@@ -19,6 +19,7 @@ const utils = [
 
 @NgModule({
   imports: [
+    CtLzmgMod,
     IconMod,
     CommonModule],
   declarations: [

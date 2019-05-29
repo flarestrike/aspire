@@ -1,19 +1,21 @@
 import { Card } from './card';
 import { Item } from './item';
 import { Location } from './location';
+import { Project } from './project';
 
-class Project {
-  text = '';
-  summary = '';
-}
 export class RoleCard extends Card {
   logo = '';
   text = '';
   location: Location;
   locations: Location[];
   duration = {};
-  // duties: Item[];
-  projects: Project[];
+  set projects(vs) {
+    vs = vs || [];
+    this._projects = vs.map(v => new Project(v));
+  }
+  get projects() {
+    return this._projects;
+  }
   set duties(vs) {
     this._duties = vs.map(v => {
       const { icon, ...rst } = v;
@@ -23,7 +25,8 @@ export class RoleCard extends Card {
   get duties() {
     return this._duties;
   }
-  _duties: Item[] = [];
+  private _duties: Item[] = [];
+  private _projects: Project[];
   constructor(o?) {
     super({ type: 'role' });
     Object.assign(this, o);

@@ -13,6 +13,7 @@ export class InfoCard extends Card {
   email = '';
   location = '';
   era = '';
+  avatar = '';
   links: Link[] = [];
   constructor(o?) {
     super({ type: 'info' });

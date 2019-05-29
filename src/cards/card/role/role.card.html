@@ -3,3 +3,8 @@
 <cs-place class='chip' *ngFor='let p of locations' [at]='p'></cs-place>
 <!-- <div> {{ projects | json }} </div> -->
 <cs-item *ngFor='let d of duties' [data]='d'></cs-item>
+<div class='samples' *ngIf='projects'>
+  <ng-container *ngFor='let p of projects'>
+    <ct-lzmg *ngFor='let s of p.samples' [src]='s.src'></ct-lzmg>
+  </ng-container>
+</div>
