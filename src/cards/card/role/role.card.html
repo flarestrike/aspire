@@ -3,8 +3,13 @@
 <cs-place class='chip' *ngFor='let p of locations' [at]='p'></cs-place>
 <!-- <div> {{ projects | json }} </div> -->
 <cs-item *ngFor='let d of duties' [data]='d'></cs-item>
+
 <div class='samples' *ngIf='projects'>
-  <ng-container *ngFor='let p of projects'>
-    <ct-lzmg *ngFor='let s of p.samples' [src]='s.src'></ct-lzmg>
+  <ng-container *ngFor='let p of projects; let j=index'>
+    <cs-sample *ngFor='let s of p.samples; let k=index'
+      (event)='sampleEvt($event, j, k)' [data]='s'></cs-sample>
   </ng-container>
 </div>
+
+<cs-sample-pop #pop (event)='popEvt($event)'
+  [poper]='poper' *ngIf='poper'></cs-sample-pop>

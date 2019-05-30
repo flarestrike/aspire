@@ -1,0 +1,42 @@
+\:host
+  ct-pop
+    z-index: 1
+    &::ng-deep .wrap
+      position: relative
+      background: var(--c-bg)
+    .loading
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 100%
+      height: 100%
+    ct-lzmg
+      display: block
+      z-index: 1
+      width: 520px
+      height: 400px
+    .desc
+      position: absolute
+      bottom: 0
+      box-sizing: border-box
+      padding-right: 40px
+    .desc,
+    &::ng-deep .actions
+      padding: 0 10px 10px
+    &::ng-deep .actions
+      text-align: right
+      text-decoration: underline
+    .ext
+      display: flex
+      justify-content: space-between
+      font-size: 12px
+      cti
+        display: inline-block
+        vertical-align: top
+      > div
+        cursor: pointer
+        padding: 10px
+        &:first-child cti
+          transform: rotate(180deg)
+        &:hover
+          text-decoration: underline

@@ -5,20 +5,21 @@ export class Sample {
   src = '';
   constructor(o?) {
     Object.assign(this, o);
+    this.thumb = this.thumb || this.src;
   }
 }
 
 export class Project {
   text = '';
   summary = '';
-  set sample(vs) {
+  set samples(vs) {
     vs = vs || [];
     this._samples = vs.map(v => new Sample(v));
   }
-  get sample() {
+  get samples() {
     return this._samples;
   }
-  private _samples: Sample[];
+  private _samples: Sample[] = [];
   constructor(o?) {
     Object.assign(this, o);
   }

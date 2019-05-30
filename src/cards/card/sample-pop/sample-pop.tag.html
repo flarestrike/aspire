@@ -1,0 +1,17 @@
+<ct-pop [actions]='actions'>
+  <ct-lzmg [src]='src' (click)='imgClick()'>
+    <div class='loading'>
+      <cti key='app.spin_n' class='spin'></cti>
+    </div>
+  </ct-lzmg>
+  <div class='desc'> {{ text }} </div>
+  <div class='ext'>
+    <div (click)='ext("prev")'>
+      <cti key='app.cmp'></cti>
+      PREV </div>
+    <div (click)='ext("next")'>
+      NEXT
+      <cti key='app.cmp'></cti>
+    </div>
+  </div>
+</ct-pop>
