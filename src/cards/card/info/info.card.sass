@@ -5,8 +5,17 @@
     line-height: 1.4
   .avatar
     flex: 0 0 120px
+    display: flex
     line-height: 0
     ct-lzmg
-      display: block
+      display: flex
+      justify-content: center
+      align-items: center
       width: 100%
-      height: 120px
+      height: 100%
+      &::ng-deep img
+        position: unset
+        width: unset
+        max-width: 100%
+        height: unset
+        max-height: 100%
