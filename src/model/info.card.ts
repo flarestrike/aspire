@@ -15,6 +15,7 @@ export class InfoCard extends Card {
   era = '';
   avatar = '';
   links: Link[] = [];
+  badges: Link[] = [];
   constructor(o?) {
     super({ type: 'info' });
     Object.assign(this, o);

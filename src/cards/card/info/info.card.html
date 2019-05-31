@@ -12,6 +12,12 @@
   <cs-item icon='body'>
     {{ lb.era }}: {{ era }}
   </cs-item>
+  <div class='badges'>
+    <a *ngFor='let i of badges' [href]='i.link'>
+      <cti [key]='i.icon'></cti>
+      <span> {{ i.text }} </span>
+    </a>
+  </div>
 </div>
 <div class='avatar'>
   <ct-lzmg [src]='avatar'></ct-lzmg>
