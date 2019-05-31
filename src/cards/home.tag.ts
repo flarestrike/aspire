@@ -18,14 +18,12 @@ export class HomeTag {
     private ism: IconSetManager,
     private plk: CardPlucker,
     private ar: ActivatedRoute) {
-    const { profile: p } = ar.root.firstChild.snapshot.data;
-    ar.queryParams.subscribe(q => {
-      console.log(q);
+    ar.root.firstChild.data.subscribe(({ profile: p }) => {
+      this.profile = p;
+      p.config.icons.forEach(c => {
+        ism.inject(c);
+      });
+      this.list = plk.pluck(p);
     });
-    this.profile = p;
-    p.config.icons.forEach(c => {
-      ism.inject(c);
-    });
-    this.list = plk.pluck(p);
   }
 }

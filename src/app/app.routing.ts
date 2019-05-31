@@ -16,13 +16,14 @@ const routes: Routes = [{
   resolve: {
     profile: ProfileResolver
   },
+  runGuardsAndResolvers: 'pathParamsOrQueryParamsChange',
   component: HomeTag,
   children: [{
     path: '',
     loadChildren: 'src/lander#LanderMod'
   }, {
     path: 'cards',
-    loadChildren: 'src/cards#CardsMod'
+    loadChildren: 'src/cards#CardsMod',
   }, {
     path: 'sheet',
     loadChildren: 'src/sheet#SheetMod'
