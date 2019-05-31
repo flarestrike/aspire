@@ -1,4 +1,4 @@
-<cs-title [key]='logo || "badge"' [text]='text'></cs-title>
+<cs-title [key]='key || "badge"' [logo]='logo' [text]='text'></cs-title>
 <cs-period class='chip' [amid]='duration'></cs-period>
 <cs-place class='chip' *ngFor='let p of locations' [at]='p'></cs-place>
 <!-- <div> {{ projects | json }} </div> -->

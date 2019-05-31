@@ -13,6 +13,9 @@ export class CardTag implements OnInit {
     this.ctx = v;
   }
   @HostBinding('attr.type') type = '';
+  @HostBinding('style.border-top-color') get btc() {
+    return this.ctx.color;
+  }
   ctx: any;
   @ViewChild('box', { read: ViewContainerRef }) box: ViewContainerRef;
   constructor(
