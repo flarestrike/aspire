@@ -1,4 +1,6 @@
 export * from './profile';
+export * from './lang';
+
 export * from './item';
 export * from './place';
 export * from './period';

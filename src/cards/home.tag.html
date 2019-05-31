@@ -1,3 +1,11 @@
+<div class='nav'>
+  <div class='gap'>
+  </div>
+  <div class='langs'>
+    <a [routerLink]='[]' [queryParams]='{ hl: i.key }' routerLinkActive='on'
+      *ngFor='let i of profile.config.langs'> <div> {{ i.text }} </div> </a>
+  </div>
+</div>
 <div class='wrap'>
   <cs-card *ngFor='let c of list' [data]='c'></cs-card>
 </div>

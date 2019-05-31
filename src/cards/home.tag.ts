@@ -19,6 +19,9 @@ export class HomeTag {
     private plk: CardPlucker,
     private ar: ActivatedRoute) {
     const { profile: p } = ar.root.firstChild.snapshot.data;
+    ar.queryParams.subscribe(q => {
+      console.log(q);
+    });
     this.profile = p;
     p.config.icons.forEach(c => {
       ism.inject(c);
