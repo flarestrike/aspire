@@ -2,6 +2,7 @@ import { Card } from './card';
 import { Item } from './item';
 
 export class StackCard extends Card {
+  key = 'items';
   order = 0;
   text = '';
   set items(vs) {

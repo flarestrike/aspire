@@ -1,0 +1,21 @@
+\:host
+  cti
+    margin-right: 5px
+  a
+    display: inline-flex
+    align-items: center
+    padding: 5px
+    text-decoration: none
+  &:hover span:after
+    width: 100%
+    transition: width .4s ease
+  span
+    position: relative
+  span:after
+    position: absolute
+    left: 0
+    bottom: 0
+    border-bottom: 2px solid
+    width: 0
+    transition: width .4s ease
+    content: var(--cnt-blank)

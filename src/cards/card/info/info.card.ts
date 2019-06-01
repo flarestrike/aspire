@@ -1,4 +1,5 @@
 import { Input, Component } from '@angular/core';
+
 import { InfoCard as Model } from 'src/model';
 import { Label } from 'src/cards/label';
 

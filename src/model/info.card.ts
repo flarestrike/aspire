@@ -4,7 +4,7 @@ export class Link {
   icon = '';
   color: string;
   text = '';
-  url = '';
+  link = '';
 }
 
 export class InfoCard extends Card {
