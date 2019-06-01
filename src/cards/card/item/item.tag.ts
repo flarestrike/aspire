@@ -4,7 +4,8 @@ import { Item as Model } from 'src/model';
 
 @Component({
   selector: 'cs-item',
-  template: `<cti [key]="icon" *ngIf="icon"></cti>
+  template: `
+    <cti [key]="icon" *ngIf="icon"></cti>
     <span>
     {{ text }} <ng-content></ng-content> </span>`,
   styleUrls: ['./item.tag.sass']

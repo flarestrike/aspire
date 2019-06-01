@@ -7,4 +7,7 @@ export class LabelSrc {
   load(k) {
     return of({ a: 1, b: 2 } as any);
   }
+  watch(k) {
+    return of({ a: 1, b: 2 } as any);
+  }
 }

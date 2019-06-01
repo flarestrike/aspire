@@ -5,11 +5,14 @@
   background: var(--c-bg-b)
   width: 100%
   min-height: 100vh
-  .nav
+  > div
     box-sizing: border-box
-    display: flex
-    padding: 20px 4% 10px
+    margin: auto
     width: 100%
+    max-width: 1280px
+  .nav
+    display: inline-flex
+    padding: 20px 4% 10px
     .gap
       flex: 1
     .langs
@@ -29,12 +32,8 @@
           box-shadow: inset -1px -1px 3px var(--c-bk), inset 1px 1px 3px var(--c-bk)
           background: var(--c-bg-bb)
   .wrap
-    box-sizing: border-box
     display: inline-grid
     grid-template-columns: repeat(12, 1fr)
-    margin: auto
     padding: 10px 4% 40px
-    width: 100%
-    max-width: 1280px
   .empty
     grid-column: span 12

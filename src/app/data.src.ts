@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { of, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { mergeMap, map, catchError } from 'rxjs/operators';
 
 import { environment as env } from 'src/environments/environment';
 import { Str } from 'src/utils';
@@ -20,6 +20,14 @@ export class DataSrc {
     const f = Str.camelize(k);
     if (!(f in this)) { return throwError('Dataset not found'); }
     return this[f](opts || {} as any);
+  }
+  watch(k, opts) {
+    const f = Str.camelize(k);
+    if (!(f in this)) { return throwError('Dataset not found'); }
+    return this.state.event.pipe(mergeMap((q: any) => {
+      if (q.data.key !== 'lang') { return; }
+      return this[f](opts || {} as any);
+    }));
   }
   appProfile({ id, lang }) {
     lang = lang || this.state.lang;
