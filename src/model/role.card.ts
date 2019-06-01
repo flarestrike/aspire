@@ -4,7 +4,7 @@ import { Location } from './location';
 import { Project } from './project';
 
 export class RoleCard extends Card {
-  logo = '';
+  key = '';
   text = '';
   location: Location;
   locations: Location[];
