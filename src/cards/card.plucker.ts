@@ -3,6 +3,9 @@ import { Profile } from 'src/model';
 
 export class CardPlucker {
   pluck(p: Profile) {
+    if (!p.name) {
+      return [];
+    }
     return [
       new InfoCard(p.info),
       ...p.stackList.map(n => new StackCard(n)).sort((a, b) => a.order < b.order ? 1 : -1),

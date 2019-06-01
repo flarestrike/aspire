@@ -16,14 +16,18 @@ class EduCardMap {
 
 export class Profile {
   config = new ProfileConfig();
-  name = '';
+  name: string;
   info: InfoCard;
+
   stacks: StackCardMap;
   stackList: StackCard[];
+
   roles: RoleCardMap;
   roleList: RoleCard[];
+
   edus: EduCardMap;
   eduList: EduCard[];
+
   constructor(o) {
     Object.assign(this, o);
     this.stackList = Object.values(o.stacks || {});
