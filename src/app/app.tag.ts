@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Enrouted } from 'src/utils';
 import { AppState } from './app.state';
 
@@ -15,6 +15,7 @@ export class AppTag {
     return this.ar;
   }
   constructor(
+    private rt: Router,
     private st: AppState,
     private ar: ActivatedRoute,
     private er: Enrouted) {
@@ -22,6 +23,8 @@ export class AppTag {
     ar.queryParams.subscribe(q => {
       if (q.hl) {
         st.update('lang', q.hl, 'en');
+      } else {
+        rt.navigate(location.pathname.split('/'), { queryParams: { hl: 'en' }});
       }
     });
   }
