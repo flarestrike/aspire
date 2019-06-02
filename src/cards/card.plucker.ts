@@ -9,7 +9,7 @@ export class CardPlucker {
     return [
       new InfoCard(p.info),
       ...p.stackList.map(n => new StackCard(n)).sort((a, b) => a.order < b.order ? 1 : -1),
-      ...p.roleList.map(n => new RoleCard(n)),
+      ...p.roleList.map(n => new RoleCard(n)).sort((a, b) => a.duration.until < b.duration.until ? 1 : -1),
       ...p.eduList.map(n => new EduCard(n)).sort((a, b) => +a.duration.since < +b.duration.since ? 1 : -1),
     ];
   }

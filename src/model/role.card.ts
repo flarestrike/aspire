@@ -8,7 +8,7 @@ export class RoleCard extends Card {
   text = '';
   location: Location;
   locations: Location[];
-  duration = {};
+  duration: { since: string, until: string } = { since: '', until: '' };
   set projects(vs) {
     vs = vs || [];
     this._projects = vs.map(v => new Project(v));
