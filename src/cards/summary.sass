@@ -1,0 +1,12 @@
+\:host > .summary
+  cs-card::ng-deep
+    cs-item
+      display: none
+    cs-item:first-of-type
+      display: block
+  cs-card[type='info']::ng-deep
+    cs-item:nth-of-type(-n+2)
+      display: block
+  cs-card[type='role']::ng-deep
+    .samples
+      display: none

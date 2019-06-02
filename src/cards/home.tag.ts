@@ -8,16 +8,20 @@ import { CardPlucker } from './card.plucker';
 @Component({
   selector: 'cs-home',
   templateUrl: './home.tag.html',
-  styleUrls: ['./home.tag.sass'],
+  styleUrls: ['./home.tag.sass', './summary.sass'],
   providers: [CardPlucker]
 })
 export class HomeTag {
   list;
   profile: Profile;
+  showSummary = false;
   constructor(
     private ism: IconSetManager,
     private plk: CardPlucker,
     private ar: ActivatedRoute) {
+    ar.queryParams.subscribe(q => {
+      this.showSummary = q.view === 'summary';
+    });
     ar.root.firstChild.data.subscribe(({ profile: p }) => {
       this.profile = p;
       p.config.icons.forEach(c => {

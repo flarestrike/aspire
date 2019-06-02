@@ -1,6 +1,27 @@
+<div class='view'>
+  <a queryParamsHandling='merge' routerLinkActive='on'
+    [routerLink]='[]' [queryParams]='{ view: "detail" }'>
+    <cti key='app.detail'></cti>
+  </a>
+  <a queryParamsHandling='merge' routerLinkActive='on'
+    [routerLink]='[]' [queryParams]='{ view: "summary" }'>
+    <cti key='app.items'></cti>
+  </a>
+  <span class='split'></span>
+  <a queryParamsHandling='merge' routerLinkActive='on'
+    [routerLink]='[]' [queryParams]='{ marked: true }'>
+    <cti key='app.mark'></cti>
+  </a>
+<!--   <a queryParamsHandling='merge' routerLinkActive='on'
+    [routerLink]='[]' [queryParams]='{ marked: true }'>
+    <cti key='app.help'></cti>
+  </a>
+ --></div>
 <div class='gap'>
 </div>
 <div class='langs'>
-  <a [routerLink]='[]' [queryParams]='{ hl: i.key }' routerLinkActive='on'
-    *ngFor='let i of langs'> <div> {{ i.text }} </div> </a>
+  <a queryParamsHandling='merge' routerLinkActive='on'
+    [routerLink]='[]' [queryParams]='{ hl: i.key }'
+    *ngFor='let i of langs'>
+    <div> {{ i.text }} </div> </a>
 </div>

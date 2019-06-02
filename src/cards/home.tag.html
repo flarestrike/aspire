@@ -1,5 +1,5 @@
 <cs-nav [config]='profile.config'></cs-nav>
-<div class='wrap'>
+<div class='wrap' [class.summary]='showSummary'>
   <cs-card *ngFor='let c of list' [data]='c'></cs-card>
   <div class='empty' *ngIf='list.length === 0'> Oops... Content Unavailable </div>
 </div>

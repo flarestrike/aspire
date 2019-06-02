@@ -15,7 +15,8 @@ export class InfoCard extends Model {
   get lb() {
     return this._lb;
   }
-  constructor(private _lb: Label) {
+  constructor(
+    private _lb: Label) {
     super({ type: 'info' });
   }
 }
