@@ -5,33 +5,14 @@
   background: var(--c-bg-b)
   width: 100%
   min-height: 100vh
-  > div
+  .wrap, cs-nav
     box-sizing: border-box
     margin: auto
     width: 100%
     max-width: 1280px
-  .nav
+  cs-nav
     flex: 0 0 70px
-    display: inline-flex
     padding: 20px 4% 10px
-    .gap
-      flex: 1
-    .langs
-      flex: 0 0 auto
-      margin-right: 20px
-      font-size: 20px
-      a
-        display: inline-block
-        border-radius: 20px
-        padding: 10px
-        width: 20px
-        height: 20px
-        text-decoration: none
-        &:hover
-          background: var(--c-bg-d)
-        &.on
-          box-shadow: inset -1px -1px 3px var(--c-bk), inset 1px 1px 3px var(--c-bk)
-          background: var(--c-bg-bb)
   .wrap
     flex: 1
     display: inline-grid

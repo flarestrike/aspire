@@ -1,4 +1,5 @@
 export * from './profile';
+export * from './profile.config';
 export * from './lang';
 
 export * from './item';
