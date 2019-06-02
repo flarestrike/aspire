@@ -1,7 +1,10 @@
-<cs-title [key]='key || "badge"' [logo]='logo' [text]='text'></cs-title>
+<cs-title [key]='key || "badge"'
+  [text]='text' [sub]='org'
+  [logo]='logo'></cs-title>
+
 <cs-period class='chip' [amid]='duration'></cs-period>
 <cs-place class='chip' *ngFor='let p of locations' [at]='p'></cs-place>
-<!-- <div> {{ projects | json }} </div> -->
+
 <cs-item *ngFor='let d of duties' [data]='d'></cs-item>
 
 <div class='samples' *ngIf='projects'>
