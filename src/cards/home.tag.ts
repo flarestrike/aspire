@@ -2,7 +2,7 @@ import { HostBinding, Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IconSetManager } from '@chakray/tags';
 
-import { Profile } from 'src/model';
+import { Profile, Card } from 'src/model';
 import { CardPlucker } from './card.plucker';
 
 @Component({
@@ -12,9 +12,11 @@ import { CardPlucker } from './card.plucker';
   providers: [CardPlucker]
 })
 export class HomeTag {
-  list;
+  list: Card[] = [];
+  cards: Card[] = [];
   profile: Profile;
   query = '';
+  loading = true;
   @HostBinding('class.summary') showSummary = false;
   constructor(
     private router: Router,
@@ -24,19 +26,27 @@ export class HomeTag {
     ar.queryParams.subscribe(q => {
       this.query = q.find || '';
       this.showSummary = q.view === 'summary';
+      // this.list = plk.find(this.cards, this.query);
+      this.load();
     });
-    ar.root.firstChild.data.subscribe(({ profile: p }) => {
+  }
+  load() {
+    this.ar.root.firstChild.data.subscribe(({ profile: p }) => {
       this.profile = p;
       p.config.icons.forEach(c => {
-        ism.inject(c);
+        this.ism.inject(c);
       });
-      this.list = plk.pluck(p);
+      this.cards = this.plk.pluck(p);
+      this.list = this.plk.find(this.cards, this.query);
+      this.loading = false;
     });
   }
   navEvt({ name, data }) {
     if (name !== 'find') { return; }
+    if (data === data.trim() + ' ') { return; }
+    this.loading = true;
     this.router.navigate([], {
-      queryParams: { find: data },
+      queryParams: { find: data ? data.trim() : null },
       queryParamsHandling: 'merge' });
   }
 }

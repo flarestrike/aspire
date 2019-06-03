@@ -22,6 +22,7 @@
     "@chakray/tags": "^0.6.0",
     "@chakray/utils": "^0.4.0",
     "core-js": "^2.5.4",
+    "fuse.js": "^3.4.5",
     "normalize.css": "^8.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

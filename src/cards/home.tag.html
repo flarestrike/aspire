@@ -2,4 +2,7 @@
 <div class='wrap'>
   <cs-card *ngFor='let c of list' [data]='c'></cs-card>
   <div class='empty' *ngIf='list.length === 0'> Oops... Content Unavailable </div>
+  <div class='loading' *ngIf='loading'>
+    <cti key='app.spin_4' class='spin'></cti>
+  </div>
 </div>
