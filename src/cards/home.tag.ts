@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { HostBinding, Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { IconSetManager } from '@chakray/tags';
 
 import { Profile } from 'src/model';
@@ -14,12 +14,15 @@ import { CardPlucker } from './card.plucker';
 export class HomeTag {
   list;
   profile: Profile;
-  showSummary = false;
+  query = '';
+  @HostBinding('class.summary') showSummary = false;
   constructor(
+    private router: Router,
     private ism: IconSetManager,
     private plk: CardPlucker,
     private ar: ActivatedRoute) {
     ar.queryParams.subscribe(q => {
+      this.query = q.find || '';
       this.showSummary = q.view === 'summary';
     });
     ar.root.firstChild.data.subscribe(({ profile: p }) => {
@@ -29,5 +32,11 @@ export class HomeTag {
       });
       this.list = plk.pluck(p);
     });
+  }
+  navEvt({ name, data }) {
+    if (name !== 'find') { return; }
+    this.router.navigate([], {
+      queryParams: { find: data },
+      queryParamsHandling: 'merge' });
   }
 }

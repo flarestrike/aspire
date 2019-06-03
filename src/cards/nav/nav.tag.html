@@ -7,17 +7,13 @@
     [routerLink]='[]' [queryParams]='{ view: "summary" }'>
     <cti key='app.items'></cti>
   </a>
-  <span class='split'></span>
-  <a queryParamsHandling='merge' routerLinkActive='on'
-    [routerLink]='[]' [queryParams]='{ marked: true }'>
-    <cti key='app.mark'></cti>
-  </a>
-<!--   <a queryParamsHandling='merge' routerLinkActive='on'
-    [routerLink]='[]' [queryParams]='{ marked: true }'>
-    <cti key='app.help'></cti>
-  </a>
- --></div>
+  <span class='fill'></span>
+</div>
 <div class='gap'>
+  <label>
+    <span> Highlights for </span>
+    <input [value]='query' name='hl' type='text' (input)='find($event)'/>
+  </label>
 </div>
 <div class='langs'>
   <a queryParamsHandling='merge' routerLinkActive='on'
