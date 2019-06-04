@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeTag } from './home.tag';
@@ -9,8 +10,10 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes)],
   declarations: [HomeTag],
   exports: [RouterModule]
 })
-export class SheetMod {}
+export class StatsMod {}
