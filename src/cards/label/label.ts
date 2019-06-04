@@ -14,6 +14,7 @@ export class Label extends LabelDef {
     super();
     src.load('label.cards').subscribe((r: LabelDef) => {
       Object.assign(this, r);
+      this.event.emit({ action: 'update' });
     });
     src.watch('label.cards').subscribe((r: LabelDef) => {
       Object.assign(this, r);

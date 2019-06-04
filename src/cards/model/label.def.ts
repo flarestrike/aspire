@@ -15,6 +15,7 @@ export class LabelDef {
   location = 'Location';
   duration = 'Duration';
   months = [null, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  highlight = 'Highlight for';
   constructor(o?) {
     Object.assign(this, o);
   }

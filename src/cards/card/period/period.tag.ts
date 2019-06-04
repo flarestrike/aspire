@@ -1,4 +1,4 @@
-import { Input, Component } from '@angular/core';
+import { Input, Component, OnDestroy } from '@angular/core';
 import { Label } from 'src/cards/label';
 
 import { Period as Model } from 'src/model';
@@ -10,16 +10,20 @@ import { Period as Model } from 'src/model';
    <div class='range'> ({{ rangeText }}) </div>`,
   styleUrls: ['./period.tag.sass']
 })
-export class CsPeriodTag extends Model {
+export class CsPeriodTag extends Model implements OnDestroy {
   @Input() set amid(v) {
     Object.assign(this, v);
   }
+  sub;
   constructor(_lb: Label) {
     super(_lb);
-    _lb.event.subscribe(e => {
+    this.sub = _lb.event.subscribe(e => {
       if (e.action === 'update') {
         this.updateText();
       }
     });
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

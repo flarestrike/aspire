@@ -1,8 +1,8 @@
 \:host.summary
   cs-nav::ng-deep .view
-    margin-left: 10px
+    margin-left: 0
   cs-nav::ng-deep .langs
-    margin-right: 10px
+    margin-right: 0
   cs-card
     margin: 0
     box-shadow: none
@@ -11,10 +11,10 @@
     cs-item
       display: none
     cs-item:first-of-type
-      display: block
+      display: flex
   cs-card[type='info']::ng-deep
     cs-item:nth-of-type(-n+2)
-      display: block
+      display: flex
   cs-card[type='role']::ng-deep
     .samples
       display: none
