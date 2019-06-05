@@ -36,9 +36,9 @@ export class DataSrc {
       return of(new Profile({}));
     }));
   }
-  labelCards({ lang }) {
+  label({ keys, lang }) {
     lang = lang || this.state.lang;
-    const url = [env.appAsset, lang, 'label', 'cards'].join('/') + '.json';
+    const url = [env.appAsset, lang, 'label', ...keys].join('/') + '.json';
     return this.http.get(url).pipe(map(r => new CardLabelDef(r)), catchError(e => {
       return of(new CardLabelDef());
     }));

@@ -18,7 +18,7 @@ export class CsPeriodTag extends Model implements OnDestroy {
   constructor(_lb: Label) {
     super(_lb);
     this.sub = _lb.event.subscribe(e => {
-      if (e.action === 'update') {
+      if (e.name === 'update') {
         this.updateText();
       }
     });

@@ -17,7 +17,7 @@ export class CsPlaceTag extends Model {
   constructor(private _lb: Label) {
     super();
     this.sub = _lb.event.subscribe(e => {
-      if (e.action === 'update') {
+      if (e.name === 'update') {
         this.updateText();
       }
     });
