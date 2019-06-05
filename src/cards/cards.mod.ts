@@ -7,7 +7,7 @@ import { aspire } from 'src/assets/fonts/aspire';
 
 // import { CardSrvMod } from './card-srv.mod';
 import { NavMod } from './nav/nav.mod';
-import { LabelMod } from './label';
+import { Label } from './label';
 import { CardMod } from './card/card.mod';
 import { HomeTag } from './home.tag';
 
@@ -22,10 +22,11 @@ const routes: Routes = [{
     NavMod,
     IconMod,
     CardMod,
-    LabelMod,
     CommonModule,
     RouterModule.forChild(routes)],
-  providers: [{
+  providers: [
+  Label,
+  {
     provide: iconSet, useValue: aspire, multi: true
   }],
   declarations: [HomeTag],

@@ -21,11 +21,11 @@ export class DataSrc {
     if (!(f in this)) { return throwError('Dataset not found'); }
     return this[f](opts || {} as any);
   }
-  watch(k, opts) {
+  watch(k, opts?) {
     const f = Str.camelize(k);
     if (!(f in this)) { return throwError('Dataset not found'); }
     return this.state.event.pipe(mergeMap((q: any) => {
-      if (q.data.key !== 'lang') { return; }
+      if (q.data.key !== 'lang') { return of(false); }
       return this[f](opts || {} as any);
     }));
   }

@@ -1,3 +1,5 @@
+export * from './app.event';
+
 export * from './profile';
 export * from './profile.config';
 export * from './lang';
