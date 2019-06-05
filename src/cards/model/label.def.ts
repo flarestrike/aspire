@@ -1,4 +1,5 @@
 export class LabelDef {
+  fmtPlace = '#city, #zone';
   date = {
     short: '#m, #y'
   };
