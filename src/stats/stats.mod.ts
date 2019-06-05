@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { SharedMod } from './shared.mod';
 import { HomeTag } from './home.tag';
 
 const routes: Routes = [{
@@ -11,7 +11,7 @@ const routes: Routes = [{
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedMod,
     RouterModule.forChild(routes)],
   declarations: [HomeTag],
   exports: [RouterModule]

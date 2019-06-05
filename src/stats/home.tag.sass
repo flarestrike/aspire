@@ -1,2 +1,28 @@
 \:host
-  color: var(--c-app)
+  display: inline-flex
+  justify-content: center
+  flex-flow: column
+  background: var(--c-bg-b)
+  width: 100%
+  min-height: 100vh
+  .wrap, .nav
+    box-sizing: border-box
+    margin: auto
+    width: 100%
+    max-width: 1280px
+  .nav
+    flex: 0 0 50px
+  .wrap
+    position: relative
+    flex: 1
+    display: inline-grid
+    grid-template-columns: repeat(12, 1fr)
+    padding: 10px 4% 40px
+  st-places
+    grid-column: span 12
+  .chart
+    grid-column: span 6
+  st-places, .chart
+    margin: 20px
+    background: white
+    height: 40vh

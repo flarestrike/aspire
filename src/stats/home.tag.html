@@ -1,2 +1,13 @@
-{{ profile | json }}
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<div class='nav'></div>
+
+<div class='wrap'>
+  <st-places [locs]='st.locs'></st-places>
+  <!-- <st-chart [data]='st.locs' [title]=''></st-chart> -->
+  <div class='chart'></div>
+  <div class='chart'></div>
+  <div class='chart'></div>
+  <div class='chart'></div>
+</div>
+
+<div class='footer'></div>

@@ -4,7 +4,7 @@
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
     "directive-class-suffix": [true, "Attr"],
     "component-class-suffix": [true, "Tag"],
-    "directive-selector": [true, "attribute", "ld", "camelCase"],
-    "component-selector": [true, "element", "ld", "kebab-case"]
+    "directive-selector": [true, "attribute", "st", "camelCase"],
+    "component-selector": [true, "element", "st", "kebab-case"]
   }
 }
