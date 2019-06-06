@@ -14,7 +14,7 @@ export class Label {
     this.event = new EventEmitter<AppEvent>();
     this.sub = this.src.watch('label', { keys: this.keys }).subscribe((r: any) => {
       Object.assign(this, r);
-      this.event.emit(new AppEvent('udpate'));
+      this.event.emit(new AppEvent('update'));
     });
   }
   destroy() {

@@ -1,7 +1,14 @@
-<div class='map'></div>
+<div class='map'>
+  <div *ngFor='let z of ps.zones'>
+    {{ z.name }} - {{ z.center.text }} - {{ z.periodSumText }}
+    <div *ngFor='let p of z.places'>
+      >> {{ p.city }} - {{ p.period.deltaText }}
+      >> {{ p.text }}
+    </div>
+  </div>
+</div>
 <div class='list'>
-  {{ lb.test }}
-  Places tag
-  {{ locs.length }}
-  {{ locs | json }}
+  <!-- Places tag -->
+  <!-- {{ locs[0] | json }} -->
+  {{ ps.zones.length | json }}
 </div>

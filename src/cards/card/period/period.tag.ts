@@ -7,7 +7,7 @@ import { Period as Model } from 'src/model';
   selector: 'cs-period',
   template: `<cti key='date'></cti>
    {{ text }}
-   <div class='range'> ({{ rangeText }}) </div>`,
+   <div class='range'> ({{ deltaText }}) </div>`,
   styleUrls: ['./period.tag.sass']
 })
 export class CsPeriodTag extends Model implements OnDestroy {
@@ -16,10 +16,10 @@ export class CsPeriodTag extends Model implements OnDestroy {
   }
   sub;
   constructor(_lb: Label) {
-    super(_lb);
+    super();
     this.sub = _lb.event.subscribe(e => {
       if (e.name === 'update') {
-        this.updateText();
+        this.lb = _lb;
       }
     });
   }

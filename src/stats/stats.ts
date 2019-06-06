@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Place } from 'src/model';
+import { PlaceMeta } from 'src/model';
 
 @Injectable()
 export class Stats {
-  locs: Place[];
+  locs: PlaceMeta[];
   load(p) {
-    // org
-    // name
-    // time
     this.locs = [
       ...this.locator(p.info),
       ...p.roleList.reduce((r, n) => [...r, ...this.locator(n)], []),
@@ -15,6 +12,12 @@ export class Stats {
     ];
   }
   locator(o) {
-    return o.location ? [o.location] : o.locations;
+    const list = o.location ? [o.location] : o.locations;
+    return list.map(i => {
+      i.period = o.duration;
+      i.org = o.org;
+      i.text = o.text;
+      return new PlaceMeta(i);
+    });
   }
 }

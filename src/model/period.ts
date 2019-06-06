@@ -1,28 +1,47 @@
 import { Dnt } from 'src/utils';
 
+export class PeriodLabel {
+  months: string[] = [];
+  date: any = { short: '' };
+  periods: any = {};
+}
+
 export class Period {
   set since(v) {
     this._since = v;
-    this.ds = Dnt.ymd(v);
-    this.updateText();
+    this.ds = Dnt.parse(v);
+    this.update();
   }
   set until(v) {
     this._until = v;
-    this.du = Dnt.ymd(v);
-    this.updateText();
+    this.du = Dnt.parse(v);
+    this.update();
   }
   ds: Date;
   du: Date;
   text = '';
-  rangeText = '';
+  delta = 0;
+  deltaText = '';
+  set lb(v) {
+    this._lb = v;
+    this.update();
+  }
+  _lb = new PeriodLabel();
   private _since = '';
   private _until = '';
-  constructor(private _lb?) {}
-  updateText() {
+  constructor({ since = '20000101', until = '20000102' } = {}) {
+    this.since = since;
+    this.until = until;
+  }
+  update() {
     if (!this.ds || !this.du) { return; }
-    const { months, date: { short: fmt }, periods } = this._lb || { date: {}, periods: {} } as any;
+    this.delta = this.du.getTime() - this.ds.getTime();
+    this.updateText();
+  }
+  updateText() {
+    const { months, date: { short: fmt }, periods } = this._lb;
     const opts = { months, fmt };
-    this.text = `${Dnt.my(this.ds, opts)} - ${Dnt.my(this.du, opts)}`;
-    this.rangeText = Dnt.period(this.ds, this.du, periods);
+    this.text = `${Dnt.str(this.ds, opts)} - ${Dnt.str(this.du, opts)}`;
+    this.deltaText = Dnt.periodStr(this.delta, periods);
   }
 }
