@@ -1,6 +1,6 @@
 export class LabelDef {
   fmtPlace = '#city, #zone';
-  test = 'test';
+  timeStay = 'Time Stay';
   periods = {
     m: '#mosmos',
     y: '#yrsyrs',

@@ -2,7 +2,7 @@ import { Input, Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { Label } from '../label';
-import { PlaceMeta, PlaceSummary } from 'src/model';
+import { PlaceMeta, PlaceSummary, ZoneInfo } from 'src/model';
 
 @Component({
   selector: 'st-places',
@@ -14,11 +14,13 @@ export class PlacesTag implements OnDestroy {
   @Input() set locs(v) {
     this._locs = v;
     this.ps = new PlaceSummary(this.lb, this._locs);
+    this.zone = this.ps.zones[0];
   }
   get locs() {
     return this._locs;
   }
   sub: Subscription;
+  zone: ZoneInfo;
   _locs: PlaceMeta[] = [];
   get lb() {
     return this._lb;
@@ -35,5 +37,8 @@ export class PlacesTag implements OnDestroy {
   ngOnDestroy() {
     if (!this.sub) { return; }
     this.sub.unsubscribe();
+  }
+  select(z) {
+    this.zone = z;
   }
 }

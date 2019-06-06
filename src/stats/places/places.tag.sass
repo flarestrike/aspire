@@ -1,3 +1,5 @@
+$gap: 15px
+
 \:host
   display: flex
   .map
@@ -6,3 +8,51 @@
   .list
     flex: 3
     overflow: auto
+  .tmp-zone
+    padding: $gap
+    cursor: pointer
+  .tmp-zone-detail
+    max-height: 100%
+    display: flex
+    flex-flow: column
+  .ts
+    display: inline-block
+    border-bottom: 1px solid lightgrey
+    padding-bottom: $gap
+    width: 100%
+    h2
+      margin: $gap $gap 6px
+      font-size: 20px
+    label
+      margin: 0 $gap
+      font-size: 14px
+      font-weight: 500
+    span
+      font-size: 14px
+      font-weight: 400
+  .places
+    padding: $gap 0
+    overflow: auto
+  .place
+    display: flex
+    padding: $gap*0.6 $gap
+    height: 100%
+    cursor: pointer
+    &:hover
+      background: whitesmoke
+    .logo
+      flex: 0 0 40px
+      margin-right: $gap
+      background: pink
+      max-height: 40px
+    h2, h4
+      margin: 0
+    h2
+      font-size: 18px
+      font-weight: 500
+    h4
+      margin-top: 4px
+      font-size: 14px
+      font-weight: 400
+      font-style: italic
+

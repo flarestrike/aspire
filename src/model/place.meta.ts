@@ -2,6 +2,7 @@ import { Place } from './place';
 import { Period } from './period';
 
 export class PlaceMeta extends Place {
+  logo = '';
   text = '';
   org = '';
   period = new Period();

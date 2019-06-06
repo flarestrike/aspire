@@ -1,14 +1,23 @@
 <div class='map'>
-  <div *ngFor='let z of ps.zones'>
-    {{ z.name }} - {{ z.center.text }} - {{ z.periodSumText }}
-    <div *ngFor='let p of z.places'>
-      >> {{ p.city }} - {{ p.period.deltaText }}
-      >> {{ p.text }}
-    </div>
+  <div class='tmp-zone' *ngFor='let z of ps.zones' (click)='select(z)'>
+    {{ z.name }} - {{ z.center.text }}
   </div>
 </div>
 <div class='list'>
-  <!-- Places tag -->
-  <!-- {{ locs[0] | json }} -->
-  {{ ps.zones.length | json }}
+  <div *ngIf='zone' class='tmp-zone-detail'>
+    <div class='ts'>
+      <h2> {{ zone.name }} </h2>
+      <label> {{ lb.timeStay }} </label>
+      <span> {{ zone.periodSumText }} </span>
+    </div>
+    <div class='places'>
+    <div class='place' *ngFor='let p of zone.places'>
+      <div class='logo'></div>
+      <div class='wrap'>
+        <h2> {{ p.text }} </h2>
+        <h4> {{ p.org }} </h4>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
