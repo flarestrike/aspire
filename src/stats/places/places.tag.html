@@ -1,24 +1,24 @@
 <div class='map'>
-  <div class='tmp-zone' *ngFor='let z of ps.zones' (click)='select(z)'>
-    {{ z.name }} - {{ z.center.text }}
-  </div>
+  <cm-maps #map vendor='Leaflet' (event)='mapEvt($event)'
+    [origin]='[24.4675334,121.0967624,10.78]'></cm-maps>
 </div>
 <div class='list'>
-  <div *ngIf='zone' class='tmp-zone-detail'>
-    <div class='ts'>
-      <h2> {{ zone.name }} </h2>
-      <label> {{ lb.timeStay }} </label>
-      <span> {{ zone.periodSumText }} </span>
-    </div>
-    <div class='places'>
+  <ng-container *ngIf='zone'>
+  <!--  -->
+  <div class='header'>
+    <h2> {{ zone.name }} </h2>
+    <label> {{ lb.timeStay }} </label>
+    <span> {{ zone.periodSumText }} </span>
+  </div>
+  <!--  -->
+  <div class='wrap'>
     <div class='place' *ngFor='let p of zone.places' (click)='place(p)'>
-      <!-- <div class='logo'>  </div> -->
       <ct-lzmg [src]='p.logo' class='logo'></ct-lzmg>
       <div class='wrap'>
         <h2> {{ p.text }} </h2>
         <h4> {{ p.org }} </h4>
       </div>
     </div>
-    </div>
   </div>
+  </ng-container>
 </div>

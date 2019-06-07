@@ -26,11 +26,11 @@ export class HomeTag {
     ar.queryParams.subscribe(q => {
       this.query = q.find || '';
       this.showSummary = q.view === 'summary';
-      // this.list = plk.find(this.cards, this.query);
       this.load();
     });
   }
   load() {
+    this.loading = true;
     this.ar.root.firstChild.data.subscribe(({ profile: p }) => {
       // if (!this.profile) {
       this.profile = p;

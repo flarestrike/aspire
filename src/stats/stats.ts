@@ -6,7 +6,7 @@ export class Stats {
   locs: PlaceMeta[];
   load(p) {
     this.locs = [
-      ...this.locator(p.info),
+      // ...this.locator(p.info),
       ...p.roleList.reduce((r, n) => [...r, ...this.locator(n)], []),
       ...p.eduList.reduce((r, n) => [...r, ...this.locator(n)], []),
     ];
