@@ -15,6 +15,7 @@ class EduCardMap {
 }
 
 export class Profile {
+  id = '';
   config = new ProfileConfig();
   name: string;
   info: InfoCard;

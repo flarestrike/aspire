@@ -11,8 +11,9 @@
       <span> {{ zone.periodSumText }} </span>
     </div>
     <div class='places'>
-    <div class='place' *ngFor='let p of zone.places'>
-      <div class='logo'></div>
+    <div class='place' *ngFor='let p of zone.places' (click)='place(p)'>
+      <!-- <div class='logo'>  </div> -->
+      <ct-lzmg [src]='p.logo' class='logo'></ct-lzmg>
       <div class='wrap'>
         <h2> {{ p.text }} </h2>
         <h4> {{ p.org }} </h4>

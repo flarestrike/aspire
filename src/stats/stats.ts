@@ -15,8 +15,8 @@ export class Stats {
     const list = o.location ? [o.location] : o.locations;
     return list.map(i => {
       i.period = o.duration;
-      i.org = o.org;
-      i.text = o.text;
+      const { org, text, logo } = o;
+      Object.assign(i, { org, text, logo });
       return new PlaceMeta(i);
     });
   }

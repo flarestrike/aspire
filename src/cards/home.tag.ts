@@ -32,11 +32,13 @@ export class HomeTag {
   }
   load() {
     this.ar.root.firstChild.data.subscribe(({ profile: p }) => {
+      // if (!this.profile) {
       this.profile = p;
       p.config.icons.forEach(c => {
         this.ism.inject(c);
       });
       this.cards = this.plk.pluck(p);
+      // }
       this.list = this.plk.find(this.cards, this.query);
       this.loading = false;
     });
@@ -47,6 +49,7 @@ export class HomeTag {
     this.loading = true;
     this.router.navigate([], {
       queryParams: { find: data ? data.trim() : null },
-      queryParamsHandling: 'merge' });
+      queryParamsHandling: 'merge'
+    });
   }
 }

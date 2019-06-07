@@ -1,8 +1,8 @@
-import { Input, Component, OnDestroy } from '@angular/core';
+import { Input, Component, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { Label } from '../label';
-import { PlaceMeta, PlaceSummary, ZoneInfo } from 'src/model';
+import { AppEvent, PlaceMeta, PlaceSummary, ZoneInfo } from 'src/model';
 
 @Component({
   selector: 'st-places',
@@ -10,6 +10,7 @@ import { PlaceMeta, PlaceSummary, ZoneInfo } from 'src/model';
   styleUrls: ['./places.tag.sass']
 })
 export class PlacesTag implements OnDestroy {
+  @Output() event = new EventEmitter();
   ps: PlaceSummary;
   @Input() set locs(v) {
     this._locs = v;
@@ -40,5 +41,8 @@ export class PlacesTag implements OnDestroy {
   }
   select(z) {
     this.zone = z;
+  }
+  place(p) {
+    this.event.emit(new AppEvent('place', p));
   }
 }

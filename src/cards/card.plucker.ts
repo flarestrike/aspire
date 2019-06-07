@@ -6,7 +6,9 @@ export class CardPlucker {
   find(cards: Card[], term) {
     if (!term) { return cards; }
     const options: Fuse.FuseOptions<Card> = {
-      keys: ['text', 'type', 'org', 'duties.text', 'location.text', 'locations.text'],
+      keys: ['text', 'type', 'org', 'duties.text',
+        'location.zone', 'location.city',
+        'locations.zone', 'locagtion.city'],
       shouldSort: false,
       tokenize: true,
       findAllMatches: true,
