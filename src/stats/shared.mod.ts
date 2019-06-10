@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { NavMod } from 'src/nav';
 import { CmMapsMod, CmMapsConfig } from '@chakray/maps';
 import { LmapsConfig } from './lmaps.config';
 
@@ -12,13 +13,17 @@ import { Label } from './label';
 import { PlacesTag } from './places/places.tag';
 
 const tags = [PlacesTag];
+const mods = [
+    NavMod,
+    ChartsMod,
+    CmMapsMod,
+    CommonModule,
+];
 
 @NgModule({
   imports: [
-    ChartsMod,
-    CmMapsMod,
+    ...mods,
     CtLzmgMod,
-    CommonModule,
   ],
   declarations: [...tags],
   providers: [
@@ -28,9 +33,7 @@ const tags = [PlacesTag];
     Label],
   exports: [
     ...tags,
-    ChartsMod,
-    CmMapsMod,
-    CommonModule,
+    ...mods,
   ]
 })
 export class SharedMod {}
