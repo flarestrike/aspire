@@ -23,8 +23,8 @@ const d3 = {
 export class D3Engine extends ChartEngine {
   name = 'd3';
   opts = {
-    w: 240,
-    h: 240,
+    w: 100,
+    h: 100,
     // maxValue: 100,
     levels: 5,
     roundStrokes: true,

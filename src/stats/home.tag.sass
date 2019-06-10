@@ -12,21 +12,38 @@
     max-width: 1280px
   .nav
     flex: 0 0 50px
+    padding: 10px calc(4% + 20px)
+    color: var(--c-bk)
+    h1
+      margin-bottom: 0
   .wrap
     position: relative
     flex: 1
     display: inline-grid
     grid-template-columns: repeat(12, 1fr)
     padding: 10px 4% 40px
-  st-places
+  .box.wide
     grid-column: span 12
-  cc-chart
+  .box
+    display: flex
+    justify-content: space-between
+    flex-flow: column
     grid-column: span 6
-  st-places, cc-chart
     margin: 20px
+    h2
+      color: var(--c-bk-b)
+      font-size: 20px
+    label
+      color: var(--c-bk-bbb)
+      font-size: 14px
+      font-style: italic
+  st-places
     background: white
     height: 40vh
   cc-chart
+    background: white
+    padding: 10px
+    height: 30vh
     &.d3::ng-deep
       display: flex
       justify-content: center
@@ -34,4 +51,5 @@
       svg
         overflow: visible
     &.chartist::ng-deep .ct-chart-pie .ct-label // sass-lint:disable-line class-name-format
-      fill: whitesmoke
+      text-shadow: 1px 1px 2px #222
+      fill: silver

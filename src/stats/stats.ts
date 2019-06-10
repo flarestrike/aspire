@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Profile, Project, PlaceMeta, Chart, Period } from 'src/model';
 
+function emptyData() {
+  return { labels: [], series: [] };
+}
+
 @Injectable()
 export class Stats {
   locs: PlaceMeta[];
   charts: Chart[];
   projs: Project[];
   sum = {
-    techs: [], top10Langs: { labels: [], series: [] },
-    timeOrgs: { labels: [], series: [] } };
+    techs: [], top10Langs: emptyData(),
+    pjTechs: emptyData(), timeOrgs: emptyData() };
   load(p) {
     this.locs = [
       // ...this.locator(p.info),
@@ -16,39 +20,50 @@ export class Stats {
       ...p.eduList.reduce((r, n) => [...r, ...this.locator(n)], []),
     ];
     this.projs = this.projector(p);
+    this.sum.pjTechs = this.pjTechs();
     this.sum.techs = this.sumTechs();
     this.sum.top10Langs = this.top10Langs();
     this.sum.timeOrgs = this.timeOrgs(p);
     this.charts = [
-      new Chart('aaa', {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-        series: [
-          [5, 2, 4, 2, 0],
-          [1, 3, 4, 2, 8]
-        ]
+      new Chart('Technologies used in each project over time', {
+        ...this.sum.pjTechs
       }, {
+        desc: 'The more recent project involves more complex technology stacks.',
         engine: 'chartist',
-        type: 'Bar',
-        stackBars: true,
+        type: 'Line',
+        // stackBars: true,
       }),
       new Chart('Familiar technology grouped by used months and selected topics', {
         series: [this.sum.techs]
-      }, { engine: 'd3' }),
-      new Chart('Timespan per Organisations', {
+      }, {
+        engine: 'd3', w: 220, h: 180 ,
+        desc: 'Selected techs categorized with frontned/design/backend/project-management ordered clockwisely.',
+      }),
+      new Chart('Timespan ratio per Organisations', {
         ...this.sum.timeOrgs
       }, {
         engine: 'chartist',
-        type: 'Pie',
-        labelOffset: 20,
-        labelDirection: 'explode',
+        type: 'Pie', labelOffset: 20, labelDirection: 'explode',
+        desc: 'Ordered by leaving time clockwisely'
       }),
-      new Chart('Top 10 languages ordered by used months', {
+      new Chart('Top 10 languages/concepts ordered by used months', {
         ...this.sum.top10Langs
       }, {
         engine: 'chartist',
-        type: 'Bar'
+        type: 'Bar',
+        desc: 'The data is roughly calculated and may be over estimate.',
       }),
     ];
+  }
+  pjTechs() {
+    const series = [this.projs.reduce((r, p) => {
+      r.push(p.tech.length);
+      return r;
+    }, [])];
+    const labels = Array.from({ length: series[0].length }, i => null);
+    labels[0] = 'Early';
+    labels[labels.length - 1] = 'Recent';
+    return { series, labels };
   }
   timeOrgs(p: Profile) {
     const pd = p.roleList.reduce((r, i) => {
@@ -99,7 +114,8 @@ export class Stats {
     // .slice(0, 20);
   }
   projector(p: Profile) {
-    return p.roleList.reduce((r, i) => {
+    return p.roleList.sort((a, b) => a.duration.until > b.duration.until ? 1 : -1)
+    .reduce((r, i) => {
       return [...r, ...i.projects.map(a => new Project(a))];
     }, []);
   }
