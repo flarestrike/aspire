@@ -20,9 +20,16 @@
     padding: 10px 4% 40px
   st-places
     grid-column: span 12
-  .chart
+  cc-chart
     grid-column: span 6
-  st-places, .chart
+  st-places, cc-chart
     margin: 20px
     background: white
     height: 40vh
+  cc-chart
+    &.d3::ng-deep
+      display: flex
+      justify-content: center
+      align-items: center
+      svg
+        overflow: visible

@@ -18,3 +18,5 @@ export * from './place';
 export * from './place.meta';
 export * from './place.summary';
 export * from './place.zone-info';
+
+export * from './chart';

@@ -30,6 +30,9 @@ export class HomeTag implements OnDestroy {
     if (!this.sub) { return; }
     this.sub.unsubscribe();
   }
+  cevt(k, { name: n, data: d }) {
+    console.log(k, n, d);
+  }
   evt(k, { name: n, data: d }) {
     const queryParams = { find: d.org || d.text };
     this.rt.navigate([this.profile.id, 'cards'], { queryParams, queryParamsHandling: 'merge' });
