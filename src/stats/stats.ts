@@ -13,7 +13,7 @@ export class Stats {
   sum = {
     techs: [], top10Langs: emptyData(),
     pjTechs: emptyData(), timeOrgs: emptyData() };
-  load(p) {
+  load(p, { box }) {
     this.locs = [
       // ...this.locator(p.info),
       ...p.roleList.reduce((r, n) => [...r, ...this.locator(n)], []),
@@ -21,39 +21,24 @@ export class Stats {
     ];
     this.projs = this.projector(p);
     this.sum.pjTechs = this.pjTechs();
-    this.sum.techs = this.sumTechs();
+    this.sum.techs = this.sumTechs(p.config.statTopics);
     this.sum.top10Langs = this.top10Langs();
     this.sum.timeOrgs = this.timeOrgs(p);
-    this.charts = [
-      new Chart('Technologies used in each project over time', {
+    const charts = [
+      new Chart('', {
         ...this.sum.pjTechs
-      }, {
-        desc: 'The more recent project involves more complex technology stacks.',
-        engine: 'chartist',
-        type: 'Line',
-        // stackBars: true,
-      }),
-      new Chart('Familiar technology grouped by used months and selected topics', {
+      }, { engine: 'chartist', type: 'Line', }),
+      new Chart('', {
         series: [this.sum.techs]
-      }, {
-        engine: 'd3', w: 220, h: 180 ,
-        desc: 'Selected techs categorized with frontned/design/backend/project-management ordered clockwisely.',
-      }),
-      new Chart('Timespan ratio per Organisations', {
+      }, { engine: 'd3', w: 220, h: 180 , }),
+      new Chart('', {
         ...this.sum.timeOrgs
-      }, {
-        engine: 'chartist',
-        type: 'Pie', labelOffset: 20, labelDirection: 'explode',
-        desc: 'Ordered by leaving time clockwisely'
-      }),
-      new Chart('Top 10 languages/concepts ordered by used months', {
+      }, { engine: 'chartist', type: 'Pie', labelOffset: 0, labelDirection: 'explode', }),
+      new Chart('', {
         ...this.sum.top10Langs
-      }, {
-        engine: 'chartist',
-        type: 'Bar',
-        desc: 'The data is roughly calculated and may be over estimate.',
-      }),
+      }, { engine: 'chartist', type: 'Bar', }),
     ];
+    this.charts = charts;
   }
   pjTechs() {
     const series = [this.projs.reduce((r, p) => {
@@ -96,18 +81,14 @@ export class Stats {
       .slice(0, 10);
     return { labels: top10.map(k => k.k), series: [top10.map(k => k.v)] };
   }
-  sumTechs() {
+  sumTechs(topics) {
     const m = this.projs.reduce((r, p) => {
       p.tech.forEach(t => {
         r[t.name] = (r[t.name] || 0) + (t.months || 0);
       });
       return r;
     }, {});
-    const topics = [
-      'Angular', 'Knockout', 'Gmaps', 'Openseadragon',
-      'Design Systems', 'SemanticUI',
-      'Ruby On Rails', 'Auth', 'VIPS', 'Streaming',
-      'Devops', 'Agile'] || Object.keys(m);
+    topics = topics || Object.keys(m);
     return topics.map(k => {
       return { axis: k, value: m[k] };
     }); // .sort((a, b) => a.value < b.value ? 1 : -1 )

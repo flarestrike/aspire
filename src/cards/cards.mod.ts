@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CtIconMod as IconMod, iconSet } from '@chakray/tags';
 import { aspire } from 'src/assets/fonts/aspire';
 
+import { NavMod as AppNavMod } from 'src/nav';
+import { LayoutMod } from 'src/layout';
 // import { CardSrvMod } from './card-srv.mod';
 import { NavMod } from './nav/nav.mod';
 import { Label } from './label';
@@ -19,6 +21,8 @@ const routes: Routes = [{
 @NgModule({
   imports: [
     // CardSrvMod,
+    LayoutMod,
+    AppNavMod,
     NavMod,
     IconMod,
     CardMod,

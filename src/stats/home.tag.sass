@@ -5,19 +5,20 @@
   background: var(--c-bg-b)
   width: 100%
   min-height: 100vh
-  an-footer
-    padding: 50px calc(4% + 20px)
-  .wrap, .nav
-    box-sizing: border-box
-    margin: auto
-    width: 100%
-    max-width: 1280px
   .nav
     flex: 0 0 50px
+    display: flex
+    justify-content: space-between
+    align-items: center
     padding: 10px calc(4% + 20px)
     color: var(--c-bk)
     h1
-      margin-bottom: 0
+      margin: 20px 0
+    ct-lzmg
+      display: inline-block
+      width: 37px
+      height: 40px
+      vertical-align: bottom
   .wrap
     position: relative
     flex: 1
@@ -41,11 +42,11 @@
       font-style: italic
   st-places
     background: white
-    height: 40vh
+    height: 350px
   cc-chart
     background: white
     padding: 10px
-    height: 30vh
+    height: 300px
     &.d3::ng-deep
       display: flex
       justify-content: center

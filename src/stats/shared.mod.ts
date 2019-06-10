@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { NavMod } from 'src/nav';
+import { LayoutMod } from 'src/layout';
 import { CmMapsMod, CmMapsConfig } from '@chakray/maps';
 import { LmapsConfig } from './lmaps.config';
 
@@ -15,6 +16,8 @@ import { PlacesTag } from './places/places.tag';
 const tags = [PlacesTag];
 const mods = [
     NavMod,
+    CtLzmgMod,
+    LayoutMod,
     ChartsMod,
     CmMapsMod,
     CommonModule,
@@ -23,7 +26,6 @@ const mods = [
 @NgModule({
   imports: [
     ...mods,
-    CtLzmgMod,
   ],
   declarations: [...tags],
   providers: [
