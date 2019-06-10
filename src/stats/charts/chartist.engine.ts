@@ -10,6 +10,7 @@ export class ChartistEngine extends ChartEngine {
   opts = { colors };
   init(el, data, { type, ...opts }) {
     opts = this.copy(opts);
+    opts.colors = data.colors || opts.colors;
     const c = charts[type](el, data, opts);
     c.on('draw', ctx => {
       const fn = '_' + type + ctx.type;
@@ -21,7 +22,7 @@ export class ChartistEngine extends ChartEngine {
   }
 
   private _Pielabel(ctx, opts, data) {
-    ctx.element._node.innerHTML = data.labels[ctx.index] + ' - ' + data.series[ctx.index];
+    // ctx.element._node.innerHTML = data.labels[ctx.index] + ' - ' + data.series[ctx.index];
   }
   private _Pieslice(ctx, opts) {
     const clr = opts.colors[ctx.index];

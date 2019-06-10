@@ -25,7 +25,7 @@ export class D3Engine extends ChartEngine {
   opts = {
     w: 240,
     h: 240,
-    maxValue: 100,
+    // maxValue: 100,
     levels: 5,
     roundStrokes: true,
   };
