@@ -1,14 +1,14 @@
 import { Card } from './card';
 import { Item } from './item';
-import { Location } from './location';
+import { Place } from './place';
 import { Project } from './project';
 
 export class RoleCard extends Card {
   key = '';
   org = '';
   text = '';
-  location: Location;
-  locations: Location[];
+  location: Place;
+  locations: Place[];
   duration: { since: string, until: string } = { since: '', until: '' };
   set projects(vs) {
     vs = vs || [];

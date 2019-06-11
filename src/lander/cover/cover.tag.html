@@ -1,12 +1,13 @@
 <div class='hero'>
-  <div> LOREM </div>
-  <div class='sub'> ipsum asdfjasd j askdf j </div>
+  <div> {{ name }} </div>
+  <div class='sub'> {{ title }} </div>
 </div>
 <div class='info'>
   <div class='list'>
-    <div class='item'> email: someone@afdafa.asdf..asdfa </div>
-    <div class='item'> location: somewehre (localtime ...) </div>
-    <div class='item'> skype: someone </div>
+    <div class='item'> email: {{ email }} </div>
+    <div class='item'>
+      location: {{ place.zone }}
+    </div>
   </div>
   <div class='gap'></div>
   <div class='more'>

@@ -9,6 +9,7 @@ export * from './period';
 export * from './period.label.def';
 
 export * from './project';
+export * from './link';
 
 export * from './card';
 export * from './info.card';

@@ -1,17 +1,15 @@
 import { Card } from './card';
-
-export class Link {
-  icon = '';
-  color: string;
-  text = '';
-  link = '';
-}
+import { Link } from './link';
+import { Place } from './place';
 
 export class InfoCard extends Card {
   title = '';
   name = '';
   email = '';
-  location = '';
+  place: Place;
+  set location(v) {
+    this.place = new Place(v);
+  }
   era = '';
   avatar = '';
   links: Link[] = [];
