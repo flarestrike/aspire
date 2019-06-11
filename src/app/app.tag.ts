@@ -14,9 +14,13 @@ export class AppTag {
   get route() {
     return this.ar;
   }
+  name = '';
   constructor(
     private ar: ActivatedRoute,
     private er: Enrouted) {
     er.title(/\//, appTitle).subscribe(_ => {});
+  }
+  evt(e) {
+    this.name = e.target.value.toLowerCase();
   }
 }

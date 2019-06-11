@@ -1,9 +1,24 @@
 <div class='nav' [class.x]='route.children.length > 0'>
-  <a queryParamsHandling='merge' routerLink='/mock'
-    [queryParams]='{ hl: "en" }'> Lander </a>
-  <a queryParamsHandling='merge' routerLink='/mock/cards'
-    [queryParams]='{ hl: "en" }'> Cards </a>
-  <a queryParamsHandling='merge' routerLink='/mock/stats'
-    [queryParams]='{ hl: "en" }'> Stats </a>
+  <label>
+    Give me a name
+    <input (input)='evt($event)'/>
+  </label>
+  <div class='entries' [class.on]='name'>
+    <a queryParamsHandling='merge' [routerLink]='[name]'
+      [queryParams]='{ hl: "en" }'>
+      <cti key='app.badge'></cti>
+      <span> Badge </span>
+    </a>
+    <a queryParamsHandling='merge' [routerLink]='[name, "cards"]'
+      [queryParams]='{ hl: "en" }'>
+      <cti key='app.detail'></cti>
+      <span> Protfolio </span>
+    </a>
+    <a queryParamsHandling='merge' [routerLink]='[name, "stats"]'
+      [queryParams]='{ hl: "en" }'>
+      <cti key='app.meter'></cti>
+      <span> Stats </span>
+    </a>
+  </div>
 </div>
 <router-outlet> </router-outlet>
