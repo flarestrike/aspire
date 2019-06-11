@@ -10,11 +10,14 @@
   cs-card::ng-deep
     cs-item
       display: none
-    cs-item:first-of-type
-      display: flex
-  cs-card[type='info']::ng-deep
     cs-item:nth-of-type(-n+2)
       display: flex
-  cs-card[type='role']::ng-deep
+  cs-card[type=info]::ng-deep
+    cs-item:nth-of-type(-n+2)
+      display: flex
+  cs-card[type=edu]::ng-deep
+    cs-item
+      display: flex
+  cs-card[type=role]::ng-deep
     .samples
       display: none
