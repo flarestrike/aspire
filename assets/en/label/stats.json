@@ -17,10 +17,5 @@
     "desc": "The data is roughly calculated and may be over estimate."
   }],
   "fmtPlace": "#city, #zone",
-  "timeStay": "Time Stay",
-  "periods": {
-    "m": "#mosmos",
-    "y": "#yrsyrs",
-    "ym": "#yrsyrs#mosmos"
-  }
+  "timeStay": "Time Stay"
 }
