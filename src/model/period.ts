@@ -26,7 +26,7 @@ export class Period {
     this._lb = v;
     this.update();
   }
-  _lb = new PeriodLabel();
+  _lb: PeriodLabel;
   private _since = '';
   private _until = '';
   constructor({ since = '20000101', until = '20000102' } = {}) {
@@ -39,6 +39,7 @@ export class Period {
     this.updateText();
   }
   updateText() {
+    if (!this._lb) { return; }
     const { months, date: { short: fmt }, periods } = this._lb;
     const opts = { months, fmt };
     this.text = `${Dnt.str(this.ds, opts)} - ${Dnt.str(this.du, opts)}`;

@@ -6,6 +6,8 @@ export * from './lang';
 
 export * from './item';
 export * from './period';
+export * from './period.label.def';
+
 export * from './project';
 
 export * from './card';

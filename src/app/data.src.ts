@@ -25,7 +25,7 @@ export class DataSrc {
     const f = Str.camelize(k);
     if (!(f in this)) { return throwError('Dataset not found'); }
     return this.state.event.pipe(mergeMap((q: any) => {
-      if (q.data.key !== 'lang') { return of(false); }
+      if (q && q.data && q.data.key !== 'lang') { return of(false); }
       return this[f](opts || {} as any);
     }));
   }
@@ -36,11 +36,11 @@ export class DataSrc {
       return of(new Profile({}));
     }));
   }
-  label({ keys, lang }) {
+  label({ keys, lang, Def = (a?) => {} }) {
     lang = lang || this.state.lang;
     const url = [env.appAsset, lang, 'label', ...keys].join('/') + '.json';
-    return this.http.get(url).pipe(map(r => new CardLabelDef(r)), catchError(e => {
-      return of(new CardLabelDef());
+    return this.http.get(url).pipe(map(r => new Def(r)), catchError(e => {
+      return of(new Def());
     }));
   }
 }

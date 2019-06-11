@@ -1,6 +1,10 @@
 {
   "fmtPlace": "#zone, #city",
   "highlight": "搜尋",
+  "title": "職稱",
+  "email": "電子郵件地址",
+  "location": "地點",
+  "era": "出生於",
   "months": [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   "date": {
     "short": "#y年#m月"
@@ -10,8 +14,4 @@
     "y": "#yrs年",
     "ym": "#yrs年#mos個月"
   },
-  "title": "職稱",
-  "email": "電子郵件地址",
-  "location": "地點",
-  "era": "出生於"
 }

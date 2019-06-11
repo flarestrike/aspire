@@ -1,4 +1,6 @@
-export class LabelDef {
+import { PeriodLabelDef } from 'src/model';
+
+export class LabelDef extends PeriodLabelDef {
   title = 'Stats';
   box = [{
     name: 'Pleces that I\'ve stayed, grouped by country',
@@ -18,12 +20,8 @@ export class LabelDef {
   }];
   fmtPlace = '#city, #zone';
   timeStay = 'Time Stay';
-  periods = {
-    m: '#mosmos',
-    y: '#yrsyrs',
-    ym: '#yrsyrs#mosmos',
-  };
   constructor(o?) {
+    super();
     Object.assign(this, o);
   }
 }

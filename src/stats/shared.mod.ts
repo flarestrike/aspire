@@ -29,10 +29,11 @@ const mods = [
   ],
   declarations: [...tags],
   providers: [
+    Label,
     { provide: ChartEngine, useClass: ChartistEngine, multi: true },
     { provide: ChartEngine, useClass: D3Engine, multi: true },
     { provide: CmMapsConfig, useClass: LmapsConfig, multi: true },
-    Label],
+  ],
   exports: [
     ...tags,
     ...mods,

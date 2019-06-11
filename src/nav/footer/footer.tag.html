@@ -1,9 +1,11 @@
-<h3>
-  Aspire™
-</h3>
-<h4>
-  Design & develpment by AUTHOR &copy; All rights reserved.
-</h4>
-<label>
-  Powered by Angular & Github.com
-</label>
+<div class='main'>
+  <h3> <a routerLink='/'> {{ lb.brand }} </a> </h3>
+  <h4> {{ lb.claim }} </h4>
+  <label> {{ lb.power }} </label>
+</div>
+<div class='nav'>
+  <a [routerLink]='c.link' *ngFor='let c of links'>
+    <cti [key]='c.icon'></cti>
+    <span> {{ c.text }} </span>
+  </a>
+</div>

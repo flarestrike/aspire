@@ -10,7 +10,7 @@ export interface Label extends Lbase { _: 0; }
 @Injectable()
 export class Label extends LabelDef {
   @use(Lbase) this;
-  keys = ['stats'];
+  keys = ['nav'];
   constructor(
     private _src: DataSrc) {
     super();
