@@ -39,7 +39,12 @@ export class DataSrc {
   label({ keys, lang, Def = (a?) => {} }) {
     lang = lang || this.state.lang;
     const url = [env.appAsset, lang, 'label', ...keys].join('/') + '.json';
-    return this.http.get(url).pipe(map(r => new Def(r)), catchError(e => {
+    return this.http.get(url).pipe(map(r => {
+      const d = new Def(r);
+      d.lang = lang;
+      return d;
+    }), catchError(e => {
+      console.error('err', e);
       return of(new Def());
     }));
   }

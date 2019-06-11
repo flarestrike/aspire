@@ -1,10 +1,11 @@
 <div class='main'>
-  <h3> <a routerLink='/'> {{ lb.brand }} </a> </h3>
-  <h4> {{ lb.claim }} </h4>
-  <label> {{ lb.power }} </label>
+  <h3> <a routerLink='/'> {{ lbf.brand }} </a> </h3>
+  <h4> {{ lbf.claim }} </h4>
+  <label> {{ lbf.power }} </label>
 </div>
 <div class='nav'>
-  <a [routerLink]='c.link' *ngFor='let c of links'>
+  <a queryParamsHandling='merge' routerLinkActive='on' [queryParams]='{ hl: lb.lang }'
+    [routerLink]='c.link' *ngFor='let c of links'>
     <cti [key]='c.icon'></cti>
     <span> {{ c.text }} </span>
   </a>

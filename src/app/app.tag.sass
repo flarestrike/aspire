@@ -4,7 +4,7 @@
   .nav
     position: absolute
     top: 0
-    box-sizing: border-box;
+    box-sizing: border-box
     display: flex
     justify-content: center
     align-items: center
@@ -14,10 +14,12 @@
     width: 100%
     height: 100%
     transition: opacity .5s ease, top .5s ease
+    // animation: dismiss 1s ease alternate
     &.x
-      top: -100%
+      top: -100vh
       opacity: 0
-      animation: dismiss 1s ease alternate
+      transition: opacity .5s ease, top .5s ease
+      // animation: dismiss 1s ease alternate
   .entries
     position: relative
     flex: 0 0 400px
@@ -76,5 +78,5 @@
     top: 0
     opacity: 1
   100%
-    top: -100%
+    top: -100vh
     opacity: 0

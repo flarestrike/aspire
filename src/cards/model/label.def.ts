@@ -1,6 +1,7 @@
 import { PeriodLabelDef } from 'src/model';
 
 export class LabelDef extends PeriodLabelDef {
+  lang = 'en';
   fmtPlace = '#city, #zone';
   info = 'Info';
   title = 'Title';

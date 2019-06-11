@@ -1,6 +1,7 @@
 import { PeriodLabelDef } from 'src/model';
 
 export class LabelDef extends PeriodLabelDef {
+  lang = 'en';
   title = 'Stats';
   box = [{
     name: 'Pleces that I\'ve stayed, grouped by country',

@@ -1,4 +1,8 @@
 export class LabelDef {
+  lang = 'en';
+  badge = 'Badge';
+  cards = 'Portfolio';
+  stats = 'Stats';
   footer = {
     brand: 'Brand',
     claim: 'Claim blah blah blah...',

@@ -15,6 +15,6 @@ export class Label extends LabelDef {
     private _src: DataSrc) {
     super();
     this.src = _src;
-    this.watch();
+    this.watch(LabelDef);
   }
 }

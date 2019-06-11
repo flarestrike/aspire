@@ -1,10 +1,5 @@
 import { Dnt } from 'src/utils';
-
-export class PeriodLabel {
-  months: string[] = [];
-  date: any = { short: '' };
-  periods: any = {};
-}
+import { PeriodLabelDef } from './period.label.def';
 
 export class Period {
   set since(v) {
@@ -23,10 +18,10 @@ export class Period {
   delta = 0;
   deltaText = '';
   set lb(v) {
-    this._lb = v;
+    this._lb = Object.assign(new PeriodLabelDef(), v);
     this.update();
   }
-  _lb: PeriodLabel;
+  _lb: PeriodLabelDef;
   private _since = '';
   private _until = '';
   constructor({ since = '20000101', until = '20000102' } = {}) {
