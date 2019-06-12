@@ -44,6 +44,9 @@ MIT
 @chakray/tags
 MIT
 
+@chakray/utils
+MIT
+
 chartist
 MIT OR WTFPL
 Copyright (c) 2013 Gion Kunz <gion.kunz@gmail.com>
