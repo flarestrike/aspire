@@ -26,7 +26,7 @@
               {
                 "glob": "*.png",
                 "input": "node_modules/leaflet/dist/images",
-                "output": "./"
+                "output": "./assets"
               },
               "src/favicon.ico",
               "src/assets",

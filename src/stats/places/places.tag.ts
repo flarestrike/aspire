@@ -2,10 +2,14 @@ import { Input, Component, Inject,
   ViewChild, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { marker, latLng, latLngBounds } from 'leaflet';
+import { Icon, marker, latLng, latLngBounds } from 'leaflet';
 import { CmMapsTag as MapsTag } from '@chakray/maps';
 import { Label } from '../label';
 import { AppEvent, PlaceMeta, PlaceSummary, ZoneInfo } from 'src/model';
+
+import { environment as env } from 'src/environments/environment';
+
+Icon.Default.imagePath = [env.appAsset, ''].join('/');
 
 @Component({
   selector: 'st-places',
