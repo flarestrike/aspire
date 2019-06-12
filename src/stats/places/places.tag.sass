@@ -4,6 +4,7 @@ $gap: 15px
   display: flex
   .map
     flex: 7
+    border-right: 1px solid lightgrey
   .list
     flex: 3
     display: flex
@@ -52,7 +53,12 @@ $gap: 15px
       font-weight: 400
 
 \:host
-  @media only screen and (min-device-width : 375px) and (max-device-width : 667px)
+  @media (max-width: 900px)
+    .map
+      flex: 6
+    .list
+      flex: 4
+  @media (max-width: 700px)
     .map
       flex: 5
     .list

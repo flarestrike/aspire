@@ -40,11 +40,14 @@
       color: var(--c-bk-bbb)
       font-size: 14px
       font-style: italic
-  st-places
+  st-places, cc-chart
+    margin-top: 10px
+    box-shadow: 0 3px 5px var(--c-bk-oo)
+    border-radius: 3px
     background: white
+  st-places
     height: 350px
   cc-chart
-    background: white
     padding: 10px
     height: 300px
     &.d3::ng-deep
@@ -58,6 +61,6 @@
       fill: silver
 
 \:host
-  @media only screen and (min-device-width : 375px) and (max-device-width : 667px)
+  @media (max-width: 700px)
     .box
       grid-column: span 12
