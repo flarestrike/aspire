@@ -1,5 +1,6 @@
 import { Input, Component, ViewChild } from '@angular/core';
 import { RoleCard as Model } from 'src/model';
+import { Gtag } from '@chakray/utils/gtag';
 
 import { CsSamplePopTag as PopTag, Poper } from '../sample-pop/sample-pop.tag';
 
@@ -13,7 +14,8 @@ export class RoleCard extends Model {
   poper: Poper;
   ip = 0;
   ips = 0;
-  constructor() {
+  constructor(
+    private gt: Gtag) {
     super();
   }
   sampleEvt({ data: d }, ip, ips) {
@@ -21,6 +23,8 @@ export class RoleCard extends Model {
     this.ips = ips;
     this.poper = d.tag;
     setTimeout(() => {
+      this.gt.event('view_item', { items: d.tag.thumb,
+        event_category: 'popImage', event_label: d.tag.text });
       this.open();
     }, 100);
   }
@@ -40,6 +44,8 @@ export class RoleCard extends Model {
       }
     }
     this.poper = this.projects[this.ip].samples[this.ips];
+    this.gt.event('view_item', { items: this.poper.thumb,
+      event_category: 'popImage', event_label: this.poper.text });
   }
   open() {
     this.pop.open().subscribe(d => {

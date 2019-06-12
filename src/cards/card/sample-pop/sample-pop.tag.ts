@@ -4,6 +4,7 @@ import { PopAction, CtPopTag } from '@chakray/tags';
 const actions = [new PopAction({ text: 'OK' })];
 
 export class Poper {
+  thumb = '';
   src = '';
   text = '';
 }

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  gtagId: '',
   brand: 'Aspire™',
   appAsset: '/assets',
   dataHost: 'http://localhost:7654',
