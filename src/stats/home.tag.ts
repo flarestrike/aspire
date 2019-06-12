@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { Label } from './label';
 import { Profile } from 'src/model';
-import { ProfileLoader } from './profile.loader';
+import { ProfileLoader } from 'src/utils/profile.loader';
 import { Stats } from './stats';
 
 @Component({

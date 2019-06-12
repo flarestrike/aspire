@@ -1,17 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IconSetManager } from '@chakray/tags';
+
+import { ProfileLoader } from 'src/utils/profile.loader';
 import { Profile } from 'src/model';
 
 @Component({
   selector: 'ld-home',
   templateUrl: './home.tag.html',
-  styleUrls: ['./home.tag.sass']
+  styleUrls: ['./home.tag.sass'],
+  providers: [ProfileLoader]
 })
-export class HomeTag {
+export class HomeTag implements OnDestroy {
   profile: Profile;
+  private sub;
   constructor(
-    private ar: ActivatedRoute) {
-    const { profile: p } = ar.root.firstChild.snapshot.data;
-    this.profile = p;
+    private pl: ProfileLoader,
+    private ism: IconSetManager) {
+    this.sub = pl.load().subscribe(p => {
+      this.profile = p;
+      p.config.icons.forEach(c => {
+        this.ism.inject(c);
+      });
+    });
+  }
+  ngOnDestroy() {
+    if (!this.sub) { return; }
+    this.sub.unsubscribe();
+    this.sub = null;
   }
 }

@@ -3,4 +3,5 @@ export class Link {
   color: string;
   text = '';
   link = '';
+  safeUrl;
 }

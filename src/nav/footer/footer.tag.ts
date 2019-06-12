@@ -1,12 +1,7 @@
 import { Input, Component } from '@angular/core';
 
+import { AppHelper } from 'src/utils';
 import { Label } from '../label';
-
-const feats = {
-  badge:     { icon: 'app.badge',  textId: 'badge', base: '' },
-  portfolio: { icon: 'app.detail', textId: 'cards', base: 'cards' },
-  stats:     { icon: 'app.meter',  textId: 'stats', base: 'stats' },
-};
 
 @Component({
   selector: 'an-footer',
@@ -16,14 +11,7 @@ const feats = {
 })
 export class AnFooterTag {
   @Input() set id(v) {
-    this.links = ['badge', 'portfolio', 'stats'].map(i => {
-       const { textId, base, icon } = feats[i];
-       const link = ['/', v];
-       if (base) {
-         link.push(base);
-       }
-       return { text: this.lb[textId], link, icon };
-    });
+    this.links = AppHelper.links(this.lb, v);
     this._id = v;
   }
   links = [];

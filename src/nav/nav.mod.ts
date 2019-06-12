@@ -5,10 +5,12 @@ import { RouterModule } from '@angular/router';
 import { CtIconMod as IconMod, iconSet } from '@chakray/tags';
 import { aspire } from 'src/assets/fonts/aspire';
 
+import { AnSpanTag } from './span/span.tag';
 import { AnLinkTag } from './link/link.tag';
 import { AnFooterTag } from './footer/footer.tag';
 
 const tags = [
+  AnSpanTag,
   AnLinkTag,
   AnFooterTag];
 

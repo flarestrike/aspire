@@ -1,34 +1,32 @@
-<div class='hero'>
+<div class='hero' [style.border-bottom-color]='lastRoleColor'>
   <div> {{ name }} </div>
   <div class='sub'> {{ title }} </div>
 </div>
 <div class='info'>
   <div class='list'>
-    <div class='item'> email: {{ email }} </div>
-    <div class='item'> location: {{ place.zone }} </div>
+    <div class='item'> {{ lb.email }}: {{ email }} </div>
+    <div class='item'> {{ lb.location }}: {{ place.zone }} </div>
     <div class='links'>
-      <div class='link'>
-        <!-- <cti key='app.skype'></cti> -->
-        skype
-      </div>
-      <div class='link'>
-        <!-- <cti key='app.skype'></cti> -->
-        Portfolio
-      </div>
-      <div class='link'>
-        <!-- <cti key='app.skype'></cti> -->
-        Stats
-      </div>
+      <a *ngFor='let b of badges' [href]='b.safeUrl' target='_blank'>
+        <cti [key]='b.icon'></cti>
+      </a>
+      <a queryParamsHandling='merge' routerLinkActive='on' [queryParams]='{ hl: lb.lang }'
+        [routerLink]='i.link' *ngFor='let i of links'>
+        <cti [key]='i.icon'></cti>
+        <an-span> {{ i.text }} </an-span>
+      </a>
     </div>
   </div>
   <div class='cfg'>
     <div class='qrc'>
-      <img [src]='url'/>
+      <img [src]='url' />
     </div>
     <div class='langs'>
-      <div class='lang'></div>
-      <div class='lang'></div>
-      <div class='lang'></div>
+      <an-link *ngFor='let i of profile.config.langs'>
+        <a queryParamsHandling='merge' routerLinkActive='on'
+          [routerLink]='[]' [queryParams]='{ hl: i.key }'>
+          <div> {{ i.text }} </div> </a>
+      </an-link>
     </div>
   </div>
 </div>

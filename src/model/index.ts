@@ -1,3 +1,4 @@
+export * from './app.mod';
 export * from './app.event';
 
 export * from './profile';
