@@ -1,5 +1,6 @@
 import { Input, Component } from '@angular/core';
 
+import { environment as env } from 'src/environments/environment';
 import { AppHelper } from 'src/utils';
 import { Label } from '../label';
 
@@ -10,6 +11,7 @@ import { Label } from '../label';
   providers: [Label]
 })
 export class AnFooterTag {
+  brand = env.brand;
   @Input() set id(v) {
     this.links = AppHelper.links(this.lb, v);
     this._id = v;

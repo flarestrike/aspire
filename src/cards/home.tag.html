@@ -1,7 +1,7 @@
-<al-page>
+<al-page *ngIf='profile.id'>
   <cs-nav [query]='query' [config]='profile.config' (event)='navEvt($event)'></cs-nav>
 </al-page>
-<al-page class='wrap'>
+<al-page class='wrap' *ngIf='profile.id'>
   <cs-card *ngFor='let c of list' [data]='c'></cs-card>
   <div class='empty' *ngIf='list.length === 0'> Oops... Content Unavailable </div>
   <div class='loading' *ngIf='loading'>
@@ -9,6 +9,8 @@
   </div>
 </al-page>
 
-<al-page>
+<al-page *ngIf='profile.id'>
   <an-footer [id]='profile.id'></an-footer>
 </al-page>
+
+<an-empty *ngIf='!profile.id'></an-empty>

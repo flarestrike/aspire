@@ -7,7 +7,7 @@ import { Profile, InfoCard } from 'src/model';
 import { AppHelper } from 'src/utils';
 
 const qopts = {
-  margin: 1,
+  margin: 4,
   color: {
     dark: '#333',  // Blue dots
     light: '#0000' // Transparent background

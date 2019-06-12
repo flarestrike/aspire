@@ -1,2 +1,4 @@
-<ld-cover [profile]='profile'></ld-cover>
+<ld-cover [profile]='profile' *ngIf='profile.id'></ld-cover>
+
+<an-empty *ngIf='!profile.id'></an-empty>
 <!-- <router-outlet></router-outlet> -->

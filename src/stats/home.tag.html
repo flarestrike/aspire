@@ -1,5 +1,5 @@
 <!-- <router-outlet></router-outlet> -->
-<al-page class='nav'>
+<al-page class='nav' *ngIf='profile.id'>
   <h1>
     <ct-lzmg [src]='profile.info.avatar'></ct-lzmg>
     {{ profile.info.name }}. {{ lb.title }} </h1>
@@ -12,7 +12,7 @@
   </div>
 </al-page>
 
-<al-page class='wrap'>
+<al-page class='wrap' *ngIf='profile.id'>
   <div class='box wide'>
     <h2> {{ lb.box[0].name }} </h2>
     <label> {{ lb.box[0].desc }} </label>
@@ -27,6 +27,8 @@
   </div>
 </al-page>
 
-<al-page>
+<al-page *ngIf='profile.id'>
   <an-footer [id]='profile.id'></an-footer>
 </al-page>
+
+<an-empty *ngIf='!profile.id'></an-empty>

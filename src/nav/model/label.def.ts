@@ -3,8 +3,9 @@ export class LabelDef {
   badge = 'Badge';
   cards = 'Portfolio';
   stats = 'Stats';
+  notFoundMsg = 'Not found';
+  notFoundAct = 'Back';
   footer = {
-    brand: 'Brand',
     claim: 'Claim blah blah blah...',
     power: 'Powered by ...',
   };
