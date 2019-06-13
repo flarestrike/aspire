@@ -4,7 +4,7 @@ export const environment = {
   brand: 'APP_BRAND',
   slogan: 'APP_SLOGAN',
   gtagId: 'APP_GTAG_ID',
-  appAsset: 'APP_APP_ASSETS',
+  appAsset: 'APP_ASSETS',
   dataHost: 'APP_DATA_HOST',
   tileHost: 'APP_TILE_HOST',
 };
