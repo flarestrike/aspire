@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CtIconMod as IconMod, iconSet } from '@chakray/tags';
-import { aspire } from 'src/assets/fonts/aspire';
+import { brand } from 'src/assets/fonts/brand';
 
 import { NavMod as AppNavMod } from 'src/nav';
 import { LayoutMod } from 'src/layout';
@@ -31,7 +31,7 @@ const routes: Routes = [{
   providers: [
   Label,
   {
-    provide: iconSet, useValue: aspire, multi: true
+    provide: iconSet, useValue: brand, multi: true
   }],
   declarations: [HomeTag],
   exports: [RouterModule]

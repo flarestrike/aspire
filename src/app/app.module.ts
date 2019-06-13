@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { CtIconMod as IconMod, iconSet } from '@chakray/tags';
-import { aspire } from 'src/assets/fonts/aspire';
+import { brand } from 'src/assets/fonts/brand';
 
 import { gtagID } from '@chakray/utils/gtag';
 import { environment as env } from 'src/environments/environment';
@@ -21,7 +21,7 @@ import { AppTag } from './app.tag';
   ],
   providers: [
     { provide: gtagID, useValue: env.gtagId },
-    { provide: iconSet, useValue: aspire, multi: true }
+    { provide: iconSet, useValue: brand, multi: true }
   ],
   bootstrap: [AppTag]
 })

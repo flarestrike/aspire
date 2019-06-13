@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { CtIconMod as IconMod, iconSet } from '@chakray/tags';
-import { aspire } from 'src/assets/fonts/aspire';
+import { brand } from 'src/assets/fonts/brand';
 
 import { AnEmptyTag } from './empty/empty.tag';
 import { AnSpanTag } from './span/span.tag';
@@ -22,7 +22,7 @@ const tags = [
     CommonModule,
     RouterModule],
   providers: [
-    { provide: iconSet, useValue: aspire, multi: true }
+    { provide: iconSet, useValue: brand, multi: true }
   ],
   declarations: [...tags],
   exports: [...tags, RouterModule]
