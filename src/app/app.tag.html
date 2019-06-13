@@ -1,23 +1,28 @@
 <div class='nav' [class.x]='route.children.length > 0'>
+  <h1>
+    <img src='/assets/brand.png' alt='{{ brand }}'/>
+    {{ brand }}
+  </h1>
+  <h2> {{ slogan }} </h2>
   <label>
-    Give me a name
+    {{ cta }}
     <input (input)='evt($event)'/>
   </label>
   <div class='entries' [class.on]='name'>
     <a queryParamsHandling='merge' [routerLink]='[name]'
       [queryParams]='{ hl: "en" }'>
       <cti key='app.badge'></cti>
-      <span> Badge </span>
+      <span> {{ badge }} </span>
     </a>
     <a queryParamsHandling='merge' [routerLink]='[name, "cards"]'
       [queryParams]='{ hl: "en" }'>
       <cti key='app.detail'></cti>
-      <span> Portfolio </span>
+      <span> {{ cards }} </span>
     </a>
     <a queryParamsHandling='merge' [routerLink]='[name, "stats"]'
       [queryParams]='{ hl: "en" }'>
       <cti key='app.meter'></cti>
-      <span> Stats </span>
+      <span> {{ stats }} </span>
     </a>
   </div>
 </div>

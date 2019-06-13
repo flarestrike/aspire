@@ -1,6 +1,16 @@
 \:host
   display: inline-block
   width: 100%
+  h1
+    display: flex
+    align-items: center
+    flex-flow: column
+    color: var(--c-bk-b)
+    img
+      width: 120px
+      height: 120px
+  h2
+    color: var(--c-bk-bb)
   .nav
     position: absolute
     top: 0
@@ -22,9 +32,9 @@
       // animation: dismiss 1s ease alternate
   .entries
     position: relative
-    flex: 0 0 400px
+    flex: 0 0 220px
     visibility: hidden
-    margin-top: 50px
+    margin-top: 30px
     width: 420px
     overflow: hidden
     a
@@ -63,12 +73,12 @@
         left: 280px
         transition-delay: .4s
   label
-    color: var(--c-bk)
+    color: var(--c-bk-b)
     font-size: 40px
     text-align: center
     input
       display: block
-      margin-top: 50px
+      margin-top: 30px
       outline: 0
       border: 0
       border-bottom: 3px solid var(--c-bk-bb)

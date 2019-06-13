@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  gtagId: '',
   brand: 'Aspire™',
+  slogan: 'Slogan slogan',
+  gtagId: '',
   appAsset: '/assets',
   dataHost: 'http://localhost:7654',
   tileHost: 'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=',

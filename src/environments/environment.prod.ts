@@ -1,8 +1,10 @@
+// https://imagemagick.org/Usage/annotating/
 export const environment = {
   production: true,
-  gtagId: 'ASPIRE_GTAG_ID',
-  brand: 'ASPIRE_BRAND',
-  appAsset: 'ASPIRE_APP_ASSETS',
-  dataHost: 'ASPIRE_DATA_HOST',
-  tileHost: 'ASPIRE_TILE_HOST',
+  brand: 'APP_BRAND',
+  slogan: 'APP_SLOGAN',
+  gtagId: 'APP_GTAG_ID',
+  appAsset: 'APP_APP_ASSETS',
+  dataHost: 'APP_DATA_HOST',
+  tileHost: 'APP_TILE_HOST',
 };
