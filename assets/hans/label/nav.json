@@ -1,0 +1,11 @@
+{
+  "badge": "名片",
+  "cards": "简历",
+  "stats": "统计图表",
+  "notFoundMsg": "找不到资料",
+  "notFoundAct": "重新输入",
+  "footer": {
+    "claim": "页面内容之编辑者保留所有权利，除另有注明，网站之内容皆采用 创用CC 姓名标示-相同方式分享 3.0 台湾 授权条款",
+    "power": "本网页使用 Angular 及 Github.com 技术服务"
+  }
+}
