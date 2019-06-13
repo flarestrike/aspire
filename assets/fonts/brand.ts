@@ -1,8 +1,8 @@
-export const aspire = {
+export const brand = {
   _: {
-    cssUrl: '/assets/fonts/aspire.css',
+    cssUrl: 'assets/fonts/brand.css',
     ns: 'app',
-    ff: 'aspire',
+    ff: 'brand',
   },
   spin_4: 'e900',
   spin_n: 'e901',
