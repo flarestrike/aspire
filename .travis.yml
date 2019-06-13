@@ -15,6 +15,8 @@ script:
   # - npx ng build @$PJ_scope/$PJ_name
   - npx ng test --watch=false --code-coverage
   - npx ng build --prod --deploy-url /$PJ_name/ --base-href /$PJ_name/
+  # fix 404 for user page
+  - cp $demo_build/index.html $demo_build/404.html
 cache:
     directories:
       - node_modules
