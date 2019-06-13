@@ -14,7 +14,7 @@ export class ProfileLoader {
     return ar.queryParams.pipe(mergeMap(q => {
       this.gt.event('screen_view', { app_name: 'SPA', screen_name: q.hl });
       return ar.root.firstChild.data.pipe(map(({ profile: p }) => {
-        return p;
+        return { profile: p, query: q };
       }));
     }));
   }

@@ -1,5 +1,5 @@
 import { OnDestroy, HostBinding, Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { IconSetManager } from '@chakray/tags';
 import { Gtag } from '@chakray/utils/gtag';
 
@@ -24,17 +24,14 @@ export class HomeTag implements OnDestroy {
   constructor(
     private gt: Gtag,
     private pl: ProfileLoader,
-    private ar: ActivatedRoute,
     private router: Router,
     private ism: IconSetManager,
     private plk: CardPlucker) {
     this.loading = true;
-    this.sub = pl.load().subscribe(p => {
-      this.load(p);
-    });
-    ar.queryParams.subscribe(q => {
-      this.query = q.find || '';
-      this.showSummary = q.view === 'summary';
+    this.sub = pl.load().subscribe(r => {
+      this.query = r.query.find || '';
+      this.showSummary = r.query.view === 'summary';
+      this.load(r.profile);
     });
   }
   ngOnDestroy() {

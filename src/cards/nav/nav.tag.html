@@ -17,7 +17,7 @@
 </div>
 <div class='langs'>
   <a queryParamsHandling='merge' routerLinkActive='on'
-    [routerLink]='[]' [queryParams]='{ hl: i.key }'
+    [routerLink]='[]' [queryParams]='{ hl: i.key, find: "" }'
     *ngFor='let i of langs'>
     <div> {{ i.text }} </div> </a>
 </div>

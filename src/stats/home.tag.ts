@@ -23,7 +23,7 @@ export class HomeTag implements OnDestroy {
     private _lb: Label,
     private _st: Stats,
     private pl: ProfileLoader) {
-    this.sub = pl.load().subscribe(p => {
+    this.sub = pl.load().subscribe(({ profile: p, query: q }) => {
       this.profile = p;
       _st.load(p, _lb);
     });

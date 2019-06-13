@@ -12,7 +12,7 @@ export class CardPlucker {
       shouldSort: false,
       tokenize: true,
       findAllMatches: true,
-      threshold: 0.2,
+      threshold: 0.1,
       location: 0,
       distance: 20,
       maxPatternLength: 32,

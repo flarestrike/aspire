@@ -17,7 +17,7 @@ export class HomeTag implements OnDestroy {
   constructor(
     private pl: ProfileLoader,
     private ism: IconSetManager) {
-    this.sub = pl.load().subscribe(p => {
+    this.sub = pl.load().subscribe(({ profile: p, query: q }) => {
       this.profile = p;
       p.config.icons.forEach(c => {
         this.ism.inject(c);

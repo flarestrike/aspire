@@ -4,7 +4,7 @@
   <label> {{ lbf.power }} </label>
 </div>
 <div class='nav'>
-  <a queryParamsHandling='merge' routerLinkActive='on' [queryParams]='{ hl: lb.lang }'
+  <a queryParamsHandling='merge' routerLinkActive='on'
     [routerLink]='c.link' *ngFor='let c of links'>
     <cti [key]='c.icon'></cti>
     <span> {{ c.text }} </span>
