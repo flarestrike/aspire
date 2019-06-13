@@ -2,5 +2,7 @@
   font-family: 'aspire';
   font-weight: normal;
   font-style: normal;
-  src: local('aspire'), url('/assets/fonts/aspire.woff?12345') format('woff');
+  src: local('aspire'),
+    url('/assets/fonts/aspire.woff?12345'),
+    url('/aspire/assets/fonts/aspire.woff?12345') format('woff');
 }
