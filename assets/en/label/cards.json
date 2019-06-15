@@ -1,5 +1,8 @@
 {
   "name": "Name",
   "email": "Email",
-  "era": "Arrived the Earth in"
+  "era": "Arrived the Earth in",
+  "summary": "Summary",
+  "experiences": "Experiences",
+  "educations": "educations"
 }
