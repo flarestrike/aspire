@@ -18,6 +18,7 @@ export * from './info.card';
 export * from './stack.card';
 export * from './role.card';
 export * from './edu.card';
+export * from './zone.card';
 
 export * from './place';
 export * from './place.meta';

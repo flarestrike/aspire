@@ -1,6 +1,7 @@
 <al-page *ngIf='profile.id'>
   <cs-nav [query]='query' [config]='profile.config' (event)='navEvt($event)'></cs-nav>
 </al-page>
+
 <al-page class='wrap' *ngIf='profile.id'>
   <cs-card *ngFor='let c of list' [data]='c'></cs-card>
   <div class='empty' *ngIf='list.length === 0'> Oops... Content Unavailable </div>

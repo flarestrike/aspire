@@ -1,4 +1,4 @@
-import { InfoCard, StackCard, RoleCard, EduCard } from 'src/model';
+import { InfoCard, StackCard, RoleCard, EduCard, ZoneCard } from 'src/model';
 import { Profile, Card } from 'src/model';
 import * as Fuse from 'fuse.js';
 
@@ -28,8 +28,11 @@ export class CardPlucker {
     }
     return [
       new InfoCard(p.info),
+      new ZoneCard({ text: 'summary' }),
       ...p.stackList.map(n => new StackCard(n)).sort((a, b) => a.order < b.order ? 1 : -1),
+      new ZoneCard({ text: 'experiences' }),
       ...p.roleList.map(n => new RoleCard(n)).sort((a, b) => a.duration.until < b.duration.until ? 1 : -1),
+      new ZoneCard({ text: 'educations' }),
       ...p.eduList.map(n => new EduCard(n)).sort((a, b) => +a.duration.since < +b.duration.since ? 1 : -1),
     ];
   }

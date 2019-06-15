@@ -28,6 +28,7 @@ export class CoverTag extends InfoCard {
     this.load(p);
   }
   links = [];
+  mailto = '';
   url = '';
   lastRoleColor = '';
   get lb() {
@@ -43,6 +44,7 @@ export class CoverTag extends InfoCard {
     const lr = p.roleList.sort((a, b) => a.duration.until < b.duration.until ? 1 : -1)[0] || {};
     this.lastRoleColor = lr.color;
     Object.assign(this, p.info);
+    this.mailto = 'mailto:' + this.email;
     Q.toDataURL(location.href, qopts).then(u => {
       this.url = u;
     });

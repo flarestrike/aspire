@@ -4,12 +4,17 @@
 </div>
 <div class='info'>
   <div class='list'>
-    <div class='item'> {{ lb.email }}: {{ email }} </div>
-    <div class='item'> {{ lb.location }}: {{ place.zone }} </div>
-    <div class='links'>
+    <div class='item'>
+      <span> {{ lb.contact }}: </span>
+      <a [href]='mailto' target='_blank'>
+        <cti key='app.mail'></cti>
+      </a>
       <a *ngFor='let b of badges' [href]='b.safeUrl' target='_blank'>
         <cti [key]='b.icon'></cti>
       </a>
+    </div>
+    <div class='item'> <span> {{ lb.location }}: </span> {{ place.zone }} </div>
+    <div class='links'>
       <a queryParamsHandling='merge' routerLinkActive='on' [queryParams]='{ hl: lb.lang }'
         [routerLink]='i.link' *ngFor='let i of links'>
         <cti [key]='i.icon'></cti>

@@ -25,7 +25,7 @@ export class HomeTag implements OnDestroy {
     private pl: ProfileLoader) {
     this.sub = pl.load().subscribe(({ profile: p, query: q }) => {
       this.profile = p;
-      _st.load(p, _lb);
+      _st.load(p);
     });
     _lb.event.subscribe(_ => {
       this.st.charts.forEach((c, i) => {

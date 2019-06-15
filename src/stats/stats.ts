@@ -13,7 +13,7 @@ export class Stats {
   sum = {
     techs: [], top10Langs: emptyData(),
     pjTechs: emptyData(), timeOrgs: emptyData() };
-  load(p, { box }) {
+  load(p) {
     this.locs = [
       // ...this.locator(p.info),
       ...p.roleList.reduce((r, n) => [...r, ...this.locator(n)], []),
@@ -26,17 +26,17 @@ export class Stats {
     this.sum.timeOrgs = this.timeOrgs(p);
     const charts = [
       new Chart('', {
-        ...this.sum.pjTechs
-      }, { engine: 'chartist', type: 'Line', }),
-      new Chart('', {
-        series: [this.sum.techs]
-      }, { engine: 'd3', w: 220, h: 180 , }),
-      new Chart('', {
         ...this.sum.timeOrgs
       }, { engine: 'chartist', type: 'Pie', labelOffset: 0, labelDirection: 'explode', }),
       new Chart('', {
         ...this.sum.top10Langs
       }, { engine: 'chartist', type: 'Bar', }),
+      new Chart('', {
+        ...this.sum.pjTechs
+      }, { engine: 'chartist', type: 'Line', }),
+      new Chart('', {
+        series: [this.sum.techs]
+      }, { engine: 'd3', w: 220, h: 180 , }),
     ];
     this.charts = charts;
   }

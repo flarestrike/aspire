@@ -8,6 +8,9 @@ export class LabelDef extends PeriodLabelDef {
   name = 'Name';
   email = 'Email';
   era = 'Era';
+  summary = 'Summary';
+  educations = 'Educations';
+  experiences = 'Experiences';
   location = 'Location';
   duration = 'Duration';
   highlight = 'Highlight for';
