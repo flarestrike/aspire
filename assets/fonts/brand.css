@@ -3,6 +3,6 @@
   font-weight: normal;
   font-style: normal;
   src: local('brand'),
-    url('/assets/fonts/brand.woff?12345') format('woff'),
-    url('/aspire/assets/fonts/brand.woff?12345') format('woff');
+    url('/assets/fonts/brand.woff?a') format('woff'),
+    url('/aspire/assets/fonts/brand.woff?a') format('woff');
 }
