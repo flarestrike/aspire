@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NavMod } from 'src/nav';
-import { LayoutMod } from 'src/layout';
+import { CtLzmgMod } from '@chakray/tags';
+
 import { CmMapsMod, CmMapsConfig } from '@chakray/maps';
 import { LmapsConfig } from './lmaps.config';
 
-import { CtLzmgMod } from '@chakray/tags';
 import { ChartsMod, ChartEngine } from '@chakray/charts';
 import { ChartistEngine, D3Engine } from './charts';
+
+import { SharedMod as AppShared } from 'src/app/shared.mod';
+import { NavMod } from 'src/nav';
+import { LayoutMod } from 'src/layout';
 
 import { Label } from './label';
 import { PlacesTag } from './places/places.tag';
 
 const tags = [PlacesTag];
 const mods = [
+    AppShared,
     NavMod,
     CtLzmgMod,
     LayoutMod,

@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { CtIconMod as IconMod, iconSet } from '@chakray/tags';
-import { brand } from 'src/assets/fonts/brand';
+import { SharedMod } from './shared.mod';
 
 import { gtagID } from '@chakray/utils/gtag';
 import { environment as env } from 'src/environments/environment';
@@ -15,13 +14,12 @@ import { AppTag } from './app.tag';
     AppTag
   ],
   imports: [
-    IconMod,
+    SharedMod,
     AppRouting,
     BrowserModule
   ],
   providers: [
     { provide: gtagID, useValue: env.gtagId },
-    { provide: iconSet, useValue: brand, multi: true }
   ],
   bootstrap: [AppTag]
 })

@@ -25,4 +25,13 @@ export class ProfileLoader {
     const rel = this.doc.querySelector('link[rel="apple-touch-icon"]');
     rel.href = icon;
   }
+  // TODO make it work on android
+  manifest() {
+    const mani = {};
+    const str = JSON.stringify(mani);
+    const blob = new Blob([str], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const rel = this.doc.querySelector('link[rel="manifest"]');
+    rel.setAttribute('href', url);
+  }
 }

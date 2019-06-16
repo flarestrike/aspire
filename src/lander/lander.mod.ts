@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CtIconMod as IconMod, iconSet } from '@chakray/tags';
+import { SharedMod } from 'src/app/shared.mod';
 
 import { NavMod } from 'src/nav';
 import { CoverTag } from './cover/cover.tag';
@@ -16,7 +16,7 @@ const routes: Routes = [{
 
 @NgModule({
   imports: [
-    IconMod,
+    SharedMod,
     NavMod,
     CommonModule,
     RouterModule.forChild(routes)],

@@ -85,7 +85,7 @@ export function RadarChart(d3, id, data, options) {
         .style('fill', '#CDCDCD')
         .style('stroke', '#CDCDCD')
         .style('fill-opacity', cfg.opacityCircles)
-        .style('filter', 'url(#glow)');
+        // .style('filter', 'url(#glow)');
 
     //Text indicating at what % each level is
     axisGrid.selectAll('.axisLabel')
@@ -180,8 +180,8 @@ export function RadarChart(d3, id, data, options) {
         .attr('d', function(d, i) { return radarLine(d); })
         .style('stroke-width', cfg.strokeWidth + 'px')
         .style('stroke', function(d, i) { return cfg.color(i); })
-        .style('fill', 'none')
-        .style('filter', 'url(#glow)');
+        .style('fill', 'none');
+        // .style('filter', 'url(#glow)');
 
     // Append the circles
     blobWrapper.selectAll('.radarCircle')
