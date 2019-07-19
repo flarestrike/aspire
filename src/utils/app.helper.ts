@@ -2,13 +2,13 @@ import { appMods } from 'src/model/app.mod';
 
 export class AppHelper {
   static links(label, id) {
-    return appMods.map(i => {
-       const { textId, base, icon } = i;
+    return Object.values(appMods).map(i => {
+       const { mod, path, icon } = i;
        const link = ['/', id];
-       if (base) {
-         link.push(base);
+       if (path) {
+         link.push(path);
        }
-       return { text: label[textId], link, icon };
+       return { text: label[mod], link, icon };
     });
   }
 }

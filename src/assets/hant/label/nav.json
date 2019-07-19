@@ -1,6 +1,7 @@
 {
-  "badge": "名片",
-  "cards": "簡歷",
+  "lander": "名片",
+  "cards": "作品集",
+  "digest": "簡歷",
   "stats": "統計圖表",
   "notFoundMsg": "找不到資料",
   "notFoundAct": "重新輸入",

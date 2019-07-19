@@ -1,6 +1,7 @@
 {
-  "badge": "Badge",
+  "lander": "Badge",
   "cards": "Portfolio",
+  "digest": "Résumé",
   "stats": "Stats",
   "notFoundMsg": "Oops, we do not have data for this name, please",
   "notFoundAct": "Try another name",

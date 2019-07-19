@@ -34,7 +34,7 @@ export class DataSrc {
     const url = [env.dataHost, lang, id].join('/') + '.json';
     return this.http.get(url).pipe(catchError(e => {
       return of(new Profile({}));
-    }));
+    }), map(r => new Profile(r)));
   }
   label({ keys, lang, Def = (a?) => {} }) {
     lang = lang || this.state.lang;
@@ -44,7 +44,7 @@ export class DataSrc {
       d.lang = lang;
       return d;
     }), catchError(e => {
-      console.error('err', e);
+      // console.error('err', e);
       return of(new Def());
     }));
   }

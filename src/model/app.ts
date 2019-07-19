@@ -1,12 +1,8 @@
+import { appMods } from './app.mod';
+
 export class App {
   brand = '';
   slogan = '';
-  cta = 'Give me a name';
-  badge = 'Badge';
-  cards = 'Portfolio';
-  stats = 'Stats';
+  cta = 'Find a name ...';
+  routes = Object.values(appMods);
 }
-
-export const routes = {
-  cards: 'portfolio'
-};

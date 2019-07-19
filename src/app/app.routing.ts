@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { routes as namedRoutes } from 'src/model';
+import { appMods } from 'src/model';
 import { ProfileResolver } from './profile.resolver';
 import { HomeTag } from './home/home.tag';
 
@@ -14,16 +14,19 @@ const routes: Routes = [{
   runGuardsAndResolvers: 'pathParamsOrQueryParamsChange',
   component: HomeTag,
   children: [{
-    path: '',
-    loadChildren: 'src/lander#LanderMod'
+    path: appMods.lander.path,
+    loadChildren: appMods.lander.loadChildren
   }, {
-    path: namedRoutes.cards,
-    loadChildren: 'src/cards#CardsMod',
+    path: appMods.cards.path,
+    loadChildren: appMods.cards.loadChildren
   }, {
-    path: 'stats',
-    loadChildren: 'src/stats#StatsMod'
+    path: appMods.digest.path,
+    loadChildren: appMods.digest.loadChildren,
   }, {
-    path: '**', pathMatch: 'full', redirectTo: namedRoutes.cards
+    path: appMods.stats.path,
+    loadChildren: appMods.stats.loadChildren,
+  }, {
+    path: '**', pathMatch: 'full', redirectTo: appMods.digest.path
   }]
 }];
 

@@ -9,20 +9,10 @@
     <input (input)='evt($event)'/>
   </label>
   <div class='entries' [class.on]='name'>
-    <a queryParamsHandling='merge' [routerLink]='[name]'
+    <a *ngFor='let r of routes' queryParamsHandling='merge' [routerLink]='[name, r.path]'
       [queryParams]='{ hl: "en" }'>
-      <cti key='app.badge'></cti>
-      <span> {{ badge }} </span>
-    </a>
-    <a queryParamsHandling='merge' [routerLink]='[name, routes.cards]'
-      [queryParams]='{ hl: "en" }'>
-      <cti key='app.detail'></cti>
-      <span> {{ cards }} </span>
-    </a>
-    <a queryParamsHandling='merge' [routerLink]='[name, "stats"]'
-      [queryParams]='{ hl: "en" }'>
-      <cti key='app.meter'></cti>
-      <span> {{ stats }} </span>
+      <cti [key]='r.icon'></cti>
+      <span> {{ r.text }} </span>
     </a>
   </div>
 </div>
