@@ -1,0 +1,12 @@
+<h3 class='title'> {{ text }} </h3>
+<div class='meta'>
+  <dt-period [data]='duration'></dt-period>
+  <dt-places [data]='location'></dt-places>
+</div>
+<h4 class='degree'> {{ dept }} </h4>
+<ul>
+  <li> {{ subject }} </li>
+  <li *ngFor='let i of relates'>
+    {{ i.text }}
+  </li>
+</ul>

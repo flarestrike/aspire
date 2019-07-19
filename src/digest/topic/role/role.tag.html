@@ -1,0 +1,8 @@
+<div class='meta'>
+  <dt-period [data]='duration'></dt-period>
+  <dt-places *ngFor='let i of locations' [data]='i'></dt-places>
+</div>
+<h4> {{ text }} </h4>
+<ul>
+  <li *ngFor='let i of duties'> {{ i.text }} </li>
+</ul>

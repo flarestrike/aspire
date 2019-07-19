@@ -14,6 +14,7 @@ import { Profile, Card } from 'src/model';
 })
 export class HomeTag implements OnDestroy {
   profile: Profile;
+  pks = [];
   private sub;
   constructor(
     private gt: Gtag,
@@ -21,6 +22,7 @@ export class HomeTag implements OnDestroy {
     private router: Router) {
     this.sub = pl.load().subscribe(r => {
       this.load(r.profile);
+      this.pks = Object.keys(r.profile);
     });
   }
   ngOnDestroy() {
@@ -29,5 +31,15 @@ export class HomeTag implements OnDestroy {
   }
   load(p) {
       this.profile = p;
+      p.eduList.sort((a, b) => a.duration.since < b.duration.since ? 1 : -1);
+      p.roleList.sort((a, b) => a.duration.since < b.duration.since ? 1 : -1);
+      const ol = p.roleList.reduce((r, i) => {
+        const rl = r[i.org] || [];
+        rl.push(i);
+        r[i.org] = rl;
+        return r;
+      }, {});
+      p.orgList = Object.keys(ol).map(k => ({ text: k, roleList: ol[k] }));
+      p.stackList.sort((a, b) => (a.order || 0) < (b.order || 0) ? 1 : -1);
   }
 }

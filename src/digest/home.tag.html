@@ -1,1 +1,25 @@
-Digest home
+<h2> Contact </h2>
+<section>
+  <div> Name: {{ profile.info.name }} </div>
+  <div> Email: {{ profile.info.email }} </div>
+  <div> Experiences: Research 4 years, Development 7 years </div>
+  Location: <dt-places [data]='profile.info.location'></dt-places>
+</section>
+
+<h2> Summary </h2>
+<section>
+  <dt-stack *ngFor='let i of profile.stackList' [data]='i'></dt-stack>
+</section>
+
+<h2> Experience </h2>
+<section>
+  <ng-container *ngFor='let o of profile.orgList'>
+    <h3> {{ o.text }} </h3>
+    <dt-role *ngFor='let i of o.roleList' [data]='i'></dt-role>
+  </ng-container>
+</section>
+
+<h2> Education </h2>
+<section>
+  <dt-edu *ngFor='let i of profile.eduList' [data]='i'></dt-edu>
+</section>
