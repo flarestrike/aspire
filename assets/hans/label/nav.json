@@ -1,6 +1,7 @@
 {
-  "badge": "名片",
-  "cards": "简历",
+  "lander": "名片",
+  "cards": "作品集",
+  "digest": "简历",
   "stats": "统计图表",
   "notFoundMsg": "找不到资料",
   "notFoundAct": "重新输入",
