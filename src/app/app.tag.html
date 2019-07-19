@@ -14,7 +14,7 @@
       <cti key='app.badge'></cti>
       <span> {{ badge }} </span>
     </a>
-    <a queryParamsHandling='merge' [routerLink]='[name, "cards"]'
+    <a queryParamsHandling='merge' [routerLink]='[name, routes.cards]'
       [queryParams]='{ hl: "en" }'>
       <cti key='app.detail'></cti>
       <span> {{ cards }} </span>

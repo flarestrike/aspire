@@ -6,3 +6,7 @@ export class App {
   cards = 'Portfolio';
   stats = 'Stats';
 }
+
+export const routes = {
+  cards: 'portfolio'
+};

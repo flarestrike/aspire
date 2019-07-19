@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Gtag } from '@chakray/utils/gtag';
 
 import { Enrouted } from 'src/utils';
-import { App } from 'src/model';
+import { App, routes } from 'src/model';
 import { environment as env } from 'src/environments/environment';
 import { AppState } from './app.state';
 
@@ -17,6 +17,7 @@ export class AppTag extends App {
   get route() {
     return this.ar;
   }
+  routes = routes;
   name = '';
   constructor(
     private gt: Gtag,

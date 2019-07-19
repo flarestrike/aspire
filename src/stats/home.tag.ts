@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { Label } from './label';
-import { Profile } from 'src/model';
+import { Profile, routes } from 'src/model';
 import { ProfileLoader } from 'src/utils/profile.loader';
 import { Stats } from './stats';
 
@@ -43,6 +43,6 @@ export class HomeTag implements OnDestroy {
   }
   evt(k, { name: n, data: d }) {
     const queryParams = { find: d.org || d.text };
-    this.rt.navigate([this.profile.id, 'cards'], { queryParams, queryParamsHandling: 'merge' });
+    this.rt.navigate([this.profile.id, routes.cards], { queryParams, queryParamsHandling: 'merge' });
   }
 }
