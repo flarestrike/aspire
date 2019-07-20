@@ -29,10 +29,18 @@ export class Profile {
   edus: EduCardMap;
   eduList: EduCard[];
 
+  orgList;
   constructor(o) {
     Object.assign(this, o);
     this.stackList = Object.values(o.stacks || {});
     this.roleList = Object.values(o.roles || {});
     this.eduList = Object.values(o.edus || {});
+    const ol = this.roleList.reduce((r, i) => {
+      const rl = r[i.org] || [];
+      rl.push(i);
+      r[i.org] = rl;
+      return r;
+    }, {});
+    this.orgList = Object.keys(ol).map(k => ({ text: k, roleList: ol[k] }));
   }
 }

@@ -38,13 +38,6 @@ export class HomeTag implements OnDestroy {
       this.profile = p;
       p.eduList.sort((a, b) => a.duration.since < b.duration.since ? 1 : -1);
       p.roleList.sort((a, b) => a.duration.since < b.duration.since ? 1 : -1);
-      const ol = p.roleList.reduce((r, i) => {
-        const rl = r[i.org] || [];
-        rl.push(i);
-        r[i.org] = rl;
-        return r;
-      }, {});
-      p.orgList = Object.keys(ol).map(k => ({ text: k, roleList: ol[k] }));
       p.stackList.sort((a, b) => (a.order || 0) < (b.order || 0) ? 1 : -1);
   }
 }
