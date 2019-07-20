@@ -2,6 +2,8 @@ export * from './app';
 export * from './app.mod';
 export * from './app.event';
 
+export * from './digest.view-options';
+
 export * from './profile';
 export * from './profile.config';
 export * from './lang';

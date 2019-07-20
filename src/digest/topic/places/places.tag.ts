@@ -9,7 +9,9 @@ import { Place as Model } from 'src/model';
 export class DtPlacesTag extends Model {
   @Input() set data(v) {
     Object.assign(this, v);
+    this.text = `${this.city}, ${this.zone}`;
   }
+  text = '';
   constructor() {
     super();
   }

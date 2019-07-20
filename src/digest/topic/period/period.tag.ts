@@ -7,7 +7,6 @@ import { Period as Model } from 'src/model';
   selector: 'dt-period',
   templateUrl: './period.tag.html',
   styleUrls: ['./period.tag.sass'],
-  providers: [Label]
 })
 export class DtPeriodTag extends Model implements OnDestroy {
   @Input() set data(v) {

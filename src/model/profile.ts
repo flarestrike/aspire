@@ -15,6 +15,7 @@ class EduCardMap {
 }
 
 export class Profile {
+  tags = ['Development', 'Frontend', 'Backend', 'Research', 'Leadership', 'Management'];
   id = '';
   config = new ProfileConfig();
   name: string;

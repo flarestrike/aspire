@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { mergeMap, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Gtag } from '@chakray/utils/gtag';
 
 @Injectable()
@@ -13,12 +13,11 @@ export class ProfileLoader {
   }
   load() {
     const { ar } = this;
-    return ar.queryParams.pipe(mergeMap(q => {
+    return ar.queryParams.pipe(map(q => {
       this.gt.event('screen_view', { app_name: 'SPA', screen_name: q.hl });
-      return ar.root.firstChild.data.pipe(map(({ profile: p }) => {
-        this.updateAppIcon(p.info.avatar);
-        return { profile: p, query: q };
-      }));
+      const p = ar.root.firstChild.snapshot.data.profile;
+      this.updateAppIcon(p.info.avatar);
+      return { profile: p, query: q };
     }));
   }
   updateAppIcon(icon) {
