@@ -1,9 +1,6 @@
 <h2> Contact </h2>
 <section>
-  <div> Name: {{ profile.info.name }} </div>
-  <div> Email: {{ profile.info.email }} </div>
-  <div> Experiences: Research 4 years, Development 7 years </div>
-  Location: <dt-places [data]='profile.info.location'></dt-places>
+  <dt-info [data]='profile.info'></dt-info>
 </section>
 
 <h2> Summary </h2>
@@ -23,3 +20,7 @@
 <section>
   <dt-edu *ngFor='let i of profile.eduList' [data]='i'></dt-edu>
 </section>
+
+<al-page *ngIf='profile.id'>
+  <an-footer [id]='profile.id'></an-footer>
+</al-page>

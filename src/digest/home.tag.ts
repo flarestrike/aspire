@@ -17,6 +17,7 @@ export class HomeTag implements OnDestroy {
   pks = [];
   private sub;
   constructor(
+    private ism: IconSetManager,
     private gt: Gtag,
     private pl: ProfileLoader,
     private router: Router) {
@@ -30,6 +31,9 @@ export class HomeTag implements OnDestroy {
     this.sub.unsubscribe();
   }
   load(p) {
+      p.config.icons.forEach(c => {
+        this.ism.inject(c);
+      });
       this.profile = p;
       p.eduList.sort((a, b) => a.duration.since < b.duration.since ? 1 : -1);
       p.roleList.sort((a, b) => a.duration.since < b.duration.since ? 1 : -1);

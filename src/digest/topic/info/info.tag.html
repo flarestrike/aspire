@@ -1,0 +1,12 @@
+<ct-lzmg [src]='avatar'></ct-lzmg>
+<ul class='wrap'>
+  <li> Name: {{ name }} </li>
+  <li> Email: {{ email }} </li>
+  <li>
+    Location: <dt-places [data]='location'></dt-places>
+  </li>
+  <li>
+    <a *ngFor='let i of badges' [href]='i.link' [title]='i.text'>
+      <cti [key]='i.icon'></cti> </a>
+  </li>
+</ul>

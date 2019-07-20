@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedMod as AppShared } from 'src/app/shared.mod';
 import { LayoutMod } from 'src/layout';
+import { NavMod } from 'src/nav';
 import { DtTopicMod } from './topic/topic.mod';
 
 import { HomeTag } from './home.tag';
@@ -16,7 +16,7 @@ const routes: Routes = [{
 @NgModule({
   imports: [
     DtTopicMod,
-    AppShared,
+    NavMod,
     LayoutMod,
     CommonModule,
     RouterModule.forChild(routes)],
