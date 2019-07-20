@@ -1,0 +1,6 @@
+<label> View </label>
+<span [class.on]='modes.all'       (click)='all()'> Everything </span>
+<span [class.on]='modes.positions' (click)='pos()'> Positions </span>
+<span [class.on]='modes.tags'      (click)='allTags()'> All Tags </span>
+<span [class.on]='modes[i]'        (click)='toggle(i)'
+  class='tag' *ngFor='let i of tags'> {{ i }} {{ this.ctagsInx[i] }} </span>

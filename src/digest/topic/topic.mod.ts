@@ -8,12 +8,14 @@ import { CtLzmgMod } from '@chakray/tags';
 import { DtPlacesTag } from './places/places.tag';
 import { DtPeriodTag } from './period/period.tag';
 
+import { DtNavTag } from './nav/nav.tag';
 import { DtInfoTag } from './info/info.tag';
 import { DtStackTag } from './stack/stack.tag';
 import { DtRoleTag } from './role/role.tag';
 import { DtEduTag } from './edu/edu.tag';
 
 const tags = [
+  DtNavTag,
   DtInfoTag,
   DtPlacesTag,
   DtPeriodTag,

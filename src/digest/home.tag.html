@@ -1,3 +1,7 @@
+<al-page *ngIf='profile.id'>
+  <dt-nav (event)='navEvt($event)' [tags]='tags'></dt-nav>
+</al-page>
+
 <h2> Contact </h2>
 <section>
   <dt-info [data]='profile.info'></dt-info>

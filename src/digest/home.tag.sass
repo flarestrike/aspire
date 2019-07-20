@@ -1,7 +1,6 @@
 \:host
   box-sizing: border-box
   display: inline-block
-  padding: 5% 0 0
   width: 100%
   max-width: 1400px
   color: var(--c-app)
@@ -24,4 +23,7 @@
     line-height: 1.2
   al-page
     display: inline-block
-    margin-top: 50px
+    &:first-of-type
+      padding: 40px 10% 0
+    &:last-of-type
+      margin-top: 50px

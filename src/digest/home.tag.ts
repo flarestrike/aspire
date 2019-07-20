@@ -15,6 +15,7 @@ import { Profile, Card } from 'src/model';
 export class HomeTag implements OnDestroy {
   profile: Profile;
   pks = [];
+  tags = ['Development', 'Frontent', 'Backend', 'Research', 'Leadership', 'Management'];
   private sub;
   constructor(
     private ism: IconSetManager,
