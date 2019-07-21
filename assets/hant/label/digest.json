@@ -1,0 +1,18 @@
+{
+  "contact": "聯絡資訊",
+  "summary": "專業領域",
+  "exp": "經歷",
+  "edu": "學歷",
+  "info": {
+    "name": "姓名",
+    "email": "電郵",
+    "location": "地點"
+  },
+  "nav": {
+    "languages": "語言",
+    "view": "顯示",
+    "all": "全部",
+    "pos": "職務",
+    "tags": "所有標記"
+  }
+}

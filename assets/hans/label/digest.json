@@ -1,0 +1,18 @@
+{
+  "contact": "联络资讯",
+  "summary": "专业领域",
+  "exp": "经历",
+  "edu": "学历",
+  "info": {
+    "name": "姓名",
+    "email": "电邮",
+    "location": "地点"
+  },
+  "nav": {
+    "languages": "语言",
+    "view": "显示",
+    "all": "全部",
+    "pos": "职务",
+    "tags": "所有标记"
+  }
+}
