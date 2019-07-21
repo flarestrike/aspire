@@ -10,7 +10,7 @@ export class Base {
       return;
     }
     this.viewItems = this._vo.ctags.reduce((r, k) => {
-      if (vi.length === 0) return r;
+      if (vi.length === 0) { return r; }
       const vc = vi.filter(l => (l.tags || []).includes(k));
       vi = vi.filter(l => !(l.tags || []).includes(k));
       return r.concat(vc);

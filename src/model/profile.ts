@@ -59,8 +59,8 @@ export class Profile {
   private extractTags(t, list, key) {
     Object.assign(t, list.reduce((r, i) => {
       i[key].forEach(k => {
-        (k.tags || []).forEach(t => {
-          r[t] = 1;
+        (k.tags || []).forEach(m => {
+          r[m] = 1;
         });
       });
       return r;
