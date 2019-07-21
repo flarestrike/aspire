@@ -1,12 +1,12 @@
 <ng-container *ngIf='langs.length > 1'>
-  <label> Languages </label>
+  <label> {{ lb.languages }} </label>
   <span *ngFor='let i of langs'
-    [class.on]='i.on' (click)='lang(i)'> {{ i.text }} </span>
+    [class.on]='i.on' (click)='lang(i)'> {{ i.name }} </span>
 </ng-container>
 
-<label> View </label>
-<span [class.on]='modes.all'       (click)='all()'> Everything </span>
-<span [class.on]='modes.positions' (click)='pos()'> Positions </span>
-<span [class.on]='modes.tags'      (click)='allTags()'> All Tags </span>
+<label> {{ lb.view }} </label>
+<span [class.on]='modes.all'       (click)='all()'> {{ lb.all }} </span>
+<span [class.on]='modes.positions' (click)='pos()'> {{ lb.pos }} </span>
+<span [class.on]='modes.tags'      (click)='allTags()'> {{ lb.tags }} </span>
 <span [class.on]='modes[i]'        (click)='toggle(i)'
   class='tag' *ngFor='let i of tags'> {{ i }} {{ this.ctagsInx[i] }} </span>

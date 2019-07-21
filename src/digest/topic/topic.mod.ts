@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Label } from 'src/cards/label';
+import { Label as CardLabel } from 'src/cards/label';
+import { Label } from 'src/digest/label';
 import { SharedMod as AppShared } from 'src/app/shared.mod';
 
 import { CtLzmgMod } from '@chakray/tags';
@@ -32,7 +33,7 @@ const tags = [
     CommonModule
   ],
   declarations: [...tags],
-  providers: [Label],
+  providers: [Label, CardLabel],
   exports: [
     AppShared,
     ...tags],

@@ -15,7 +15,7 @@ class EduCardMap {
 }
 
 export class Profile {
-  tags = ['Development', 'Frontend', 'Backend', 'Research', 'Leadership', 'Management'];
+  tags = [];
   id = '';
   config = new ProfileConfig();
   name: string;
@@ -36,12 +36,34 @@ export class Profile {
     this.stackList = Object.values(o.stacks || {});
     this.roleList = Object.values(o.roles || {});
     this.eduList = Object.values(o.edus || {});
-    const ol = this.roleList.reduce((r, i) => {
+    this.parseOrgList();
+    this.parseTags();
+  }
+  parseOrgList() {
+    const ol = this.roleList.sort((a, b) => a.duration.until < b.duration.until ? 1 : -1)
+    .reduce((r, i) => {
       const rl = r[i.org] || [];
       rl.push(i);
       r[i.org] = rl;
       return r;
     }, {});
     this.orgList = Object.keys(ol).map(k => ({ text: k, roleList: ol[k] }));
+  }
+  parseTags() {
+    const t = {};
+    this.extractTags(t, this.stackList, 'items');
+    this.extractTags(t, this.roleList, 'duties');
+    this.extractTags(t, this.eduList, 'relates');
+    this.tags = Object.keys(t);
+  }
+  private extractTags(t, list, key) {
+    Object.assign(t, list.reduce((r, i) => {
+      i[key].forEach(k => {
+        (k.tags || []).forEach(t => {
+          r[t] = 1;
+        });
+      });
+      return r;
+    }, {}));
   }
 }

@@ -12,13 +12,23 @@ export class DigestViewOptions {
     this.langs.forEach(i => i.on = i.key === q.hl);
     this.tags = p.tags || [];
     this.ctags = q.tags ? q.tags.split(',') : [];
-    this.qmode(modeInx[q.mode]);
-    if (q.mode === 'pos' || !q.mode) {
+    const mode = !(q.mode || q.tags) ? 'all' : q.mode;
+    this.qmode(modeInx[mode]);
+    if (mode === 'pos' || !mode) {
       this.ctags.forEach(i => this.modes[i] = true);
       this.updateInx();
     } else {
       this.updateCtags(this.modes.tags);
     }
+    this.update();
+  }
+  show = {
+    detail: false,
+    position: false,
+  };
+  update() {
+    const { all, positions, tags } = this.modes;
+    this.show.detail = all || tags || this.ctags.length > 0;
   }
   private qmode(i) {
     this.modes = this.setMode(i === 0, i < 2, i === 0 || i === 2);

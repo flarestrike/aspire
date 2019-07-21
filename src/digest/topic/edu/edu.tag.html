@@ -4,7 +4,7 @@
   <dt-places [data]='location'></dt-places>
 </div>
 <h4 class='degree'> {{ dept }} </h4>
-<ul>
+<ul *ngIf='vo.show.detail'>
   <li> {{ subject }} </li>
   <li *ngFor='let i of relates'>
     {{ i.text }}

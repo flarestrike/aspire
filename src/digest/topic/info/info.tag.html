@@ -1,9 +1,11 @@
 <ct-lzmg [src]='avatar'></ct-lzmg>
 <ul class='wrap'>
-  <li> Name: {{ name }} </li>
-  <li> Email: {{ email }} </li>
+  <li> {{ lb.name }}: {{ name }} </li>
+  <li *ngIf='email'>
+    {{ lb.email }}: <a href='mailto:{{ email }}' target='about:blank'> {{ email }}</a>
+  </li>
   <li>
-    Location: <dt-places [data]='place'></dt-places>
+    {{ lb.location }}: <dt-places [data]='place'></dt-places>
   </li>
   <li>
     <a *ngFor='let i of badges' [href]='i.link' [title]='i.text'>

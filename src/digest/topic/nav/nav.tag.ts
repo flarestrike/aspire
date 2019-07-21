@@ -1,17 +1,21 @@
 import { Output, EventEmitter, Input, Component } from '@angular/core';
 import { DigestViewOptions as Model } from 'src/model';
+import { Label } from 'src/digest/label';
 
 @Component({
   selector: 'dt-nav',
   templateUrl: './nav.tag.html',
-  styleUrls: ['./nav.tag.sass']
+  styleUrls: ['./nav.tag.sass'],
 })
 export class DtNavTag extends Model {
   @Input() set data(v) {
     Object.assign(this, v);
   }
   @Output() event = new EventEmitter();
-  constructor() {
+  get lb() {
+    return this._lb.nav;
+  }
+  constructor(private _lb: Label) {
     super();
   }
   lang(i) {

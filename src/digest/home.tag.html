@@ -2,27 +2,28 @@
   <dt-nav (event)='nc.evt($event)' [data]='dvo'></dt-nav>
 </al-page>
 
-<h2> Contact </h2>
+<h2> {{ lb.contact }} </h2>
 <section>
   <dt-info [data]='profile.info'></dt-info>
 </section>
 
-<h2> Summary </h2>
+<h2> {{ lb.summary }} </h2>
 <section>
-  <dt-stack *ngFor='let i of profile.stackList' [data]='i'></dt-stack>
+  <dt-stack *ngFor='let i of profile.stackList' [data]='i'
+    [vo]='dvo'></dt-stack>
 </section>
 
-<h2> Experience </h2>
+<h2> {{ lb.exp }} </h2>
 <section>
   <ng-container *ngFor='let o of profile.orgList'>
     <h3> {{ o.text }} </h3>
-    <dt-role *ngFor='let i of o.roleList' [data]='i'></dt-role>
+    <dt-role *ngFor='let i of o.roleList' [data]='i' [vo]='dvo'></dt-role>
   </ng-container>
 </section>
 
-<h2> Education </h2>
+<h2> {{ lb.edu }} </h2>
 <section>
-  <dt-edu *ngFor='let i of profile.eduList' [data]='i'></dt-edu>
+  <dt-edu *ngFor='let i of profile.eduList' [data]='i' [vo]='dvo'></dt-edu>
 </section>
 
 <al-page *ngIf='profile.id'>

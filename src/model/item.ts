@@ -3,6 +3,7 @@ export class Item {
   color = '';
   icon = '';
   font = '';
+  tags = [];
   constructor(o?) {
     Object.assign(this, o);
   }

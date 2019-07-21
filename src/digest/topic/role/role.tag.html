@@ -3,6 +3,6 @@
   <dt-places *ngFor='let i of locations' [data]='i'></dt-places>
 </div>
 <h4> {{ text }} </h4>
-<ul>
-  <li *ngFor='let i of duties'> {{ i.text }} </li>
+<ul *ngIf='vo.show.detail'>
+  <li *ngFor='let i of viewItems'> {{ i.text }} </li>
 </ul>

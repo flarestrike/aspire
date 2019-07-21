@@ -15,16 +15,16 @@ const routes: Routes = [{
   component: HomeTag,
   children: [{
     path: appMods.lander.path,
-    loadChildren: appMods.lander.loadChildren
+    loadChildren: 'src/lander#LanderMod'
   }, {
     path: appMods.cards.path,
-    loadChildren: appMods.cards.loadChildren
+    loadChildren: 'src/cards#CardsMod'
   }, {
     path: appMods.digest.path,
-    loadChildren: appMods.digest.loadChildren,
+    loadChildren: 'src/digest#DigestMod'
   }, {
     path: appMods.stats.path,
-    loadChildren: appMods.stats.loadChildren,
+    loadChildren: 'src/stats#StatsMod'
   }, {
     path: '**', pathMatch: 'full', redirectTo: appMods.digest.path
   }]

@@ -4,6 +4,7 @@ import { Gtag } from '@chakray/utils/gtag';
 
 import { ProfileLoader } from 'src/utils/profile.loader';
 import { Profile, Card, DigestViewOptions as DVO } from 'src/model';
+import { Label } from './label';
 import { NavCtrl } from './nav.ctrl';
 
 @Component({
@@ -16,9 +17,13 @@ export class HomeTag implements OnDestroy {
   profile: Profile;
   pks = [];
   dvo: DVO;
+  get lb() {
+    return this._lb;
+  }
   private sub;
   constructor(
     private nc: NavCtrl,
+    private _lb: Label,
     private ism: IconSetManager,
     private gt: Gtag,
     private pl: ProfileLoader) {
@@ -26,6 +31,7 @@ export class HomeTag implements OnDestroy {
       this.load(r);
       this.pks = Object.keys(r.profile);
     });
+    // _lb.event.subscribe(_ => { });
   }
   ngOnDestroy() {
     if (!this.sub) { return; }
@@ -35,8 +41,8 @@ export class HomeTag implements OnDestroy {
       p.config.icons.forEach(c => {
         this.ism.inject(c);
       });
-      p.eduList.sort((a, b) => a.duration.since < b.duration.since ? 1 : -1);
-      p.roleList.sort((a, b) => a.duration.since < b.duration.since ? 1 : -1);
+      p.eduList.sort((a, b) => a.duration.until < b.duration.until ? 1 : -1);
+      p.roleList.sort((a, b) => a.duration.until < b.duration.until ? 1 : -1);
       p.stackList.sort((a, b) => (a.order || 0) < (b.order || 0) ? 1 : -1);
       this.profile = p;
       this.dvo = new DVO(p, q);

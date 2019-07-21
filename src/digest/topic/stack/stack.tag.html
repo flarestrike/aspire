@@ -1,4 +1,4 @@
 <h3> {{ text }} </h3>
-<ul>
-  <li *ngFor='let i of items'> {{ i.text }} </li>
+<ul *ngIf='vo.show.detail'>
+  <li *ngFor='let i of viewItems'> {{ i.text }} </li>
 </ul>
