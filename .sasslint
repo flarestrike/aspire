@@ -52,15 +52,16 @@ rules:
         - left
         - right
         - bottom
-        - flex
-
         - box-sizing
+
+        - flex
+        - grid
         - display
         - justify-content
         - align-items
         - flex-flow
+        - flex-directioon
         - flex-wrap
-        - grid
         - grid-template-columns
         - grid-column
 
