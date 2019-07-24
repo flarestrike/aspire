@@ -14,19 +14,19 @@ const routes: Routes = [{
   runGuardsAndResolvers: 'pathParamsOrQueryParamsChange',
   component: HomeTag,
   children: [{
-    path: appMods.lander.path,
+    path: '',
     loadChildren: 'src/lander#LanderMod'
   }, {
-    path: appMods.cards.path,
+    path: 'portfolio',
     loadChildren: 'src/cards#CardsMod'
   }, {
-    path: appMods.digest.path,
+    path: 'digest',
     loadChildren: 'src/digest#DigestMod'
   }, {
-    path: appMods.stats.path,
+    path: 'stats',
     loadChildren: 'src/stats#StatsMod'
   }, {
-    path: '**', pathMatch: 'full', redirectTo: appMods.digest.path
+    path: '**', pathMatch: 'full', redirectTo: 'digest'
   }]
 }];
 

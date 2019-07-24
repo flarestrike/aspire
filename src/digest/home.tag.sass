@@ -26,3 +26,19 @@
       padding: 40px 10% 0
     &:last-of-type
       margin-top: 50px
+
+\:host
+  @media (max-width: 820px) and (orientation: portrait)
+    display: inherit
+    h2, section
+      margin: 10px 5%
+    section
+      width: 90%
+      padding: 0
+    ul li, &::ng-deep ul li
+      word-break: break-all
+    al-page
+      &:first-of-type
+        padding: 20px 5% 0
+      &:last-of-type
+        margin-top: 20px
