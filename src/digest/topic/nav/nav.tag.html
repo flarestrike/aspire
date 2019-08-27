@@ -5,8 +5,9 @@
 </ng-container>
 
 <label> {{ lb.view }} </label>
-<span [class.on]='modes.all'       (click)='all()'> {{ lb.all }} </span>
+<!-- <span [class.on]='modes.all'       (click)='all()'> {{ lb.all }} </span>
 <span [class.on]='modes.positions' (click)='pos()'> {{ lb.pos }} </span>
+ -->
 <span [class.on]='modes.tags'      (click)='allTags()'> {{ lb.tags }} </span>
 <span [class.on]='modes[i]'        (click)='toggle(i)'
   class='tag' *ngFor='let i of tags'> {{ i }} {{ this.ctagsInx[i] }} </span>
